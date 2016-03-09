@@ -22,6 +22,9 @@ The following **optional** features are implemented:
 - [ ] Be able to invite friends to use the app
 - [ ] Be able to pay in advance through Venmo API 
 
+You can view the wireframes here:
+<img src='http://i.imgur.com/zKcNJmB.jpg?1' title='Wireframes' width='150' height='150'/>
+
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
