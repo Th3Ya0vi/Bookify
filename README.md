@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 - [ ] Be able to pay in advance through Venmo API 
 
 You can view the wireframes here:
-<img src='http://i.imgur.com/zKcNJmB.jpg?1' title='Wireframes' width='150' height='150'/>
+<img src='http://i.imgur.com/zKcNJmB.jpg?1' title='Wireframes' width='450' height='450'/>
 
 ## Video Walkthrough 
 
