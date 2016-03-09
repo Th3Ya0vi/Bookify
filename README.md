@@ -9,17 +9,18 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] Implement three tabs for navigation
-- [ ] The user will be able to post books to database
+- [ ] Be able to sign in and register
+- [ ] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
+- [ ] Implement Popular, Sell, and Profile Tabs
+- [ ] Be able to post a book using the ISBN number and send it to the database as well as display in the app
 - [ ] Search functionality from our own database and RESTful API
-- [ ] Combination of table views and collection views
-- [ ] Users will be able to communicate using the app (via a chat)
+- [ ] Users will be able to communicate using the app (via a chat mechanism)
 
 The following **optional** features are implemented:
 
-- [ ] Users will be able to invite friends to use the app
-- [ ] Be able to use barcode scanning to post a specific book with preloaded information (author, title, etc.) 
-- [ ] Be able to add book to 'wishlist' / cart
+- [ ] Be able to use the camera to detect a barcode which gets the information necessary to post a book
+- [ ] Be able to invite friends to use the app
+- [ ] Be able to pay in advance through Venmo API 
 
 ## Video Walkthrough 
 
