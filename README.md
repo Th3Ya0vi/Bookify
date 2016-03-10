@@ -19,11 +19,39 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [ ] Be able to use the camera to detect a barcode which gets the information necessary to post a book
+- [ ] Be able to have a wishlist
 - [ ] Be able to invite friends to use the app
 - [ ] Be able to pay in advance through Venmo API (Possible optional) 
 
+##Wireframes
 You can view the wireframes here:
 <img src='http://i.imgur.com/zKcNJmB.jpg?1' title='Wireframes' width='450' height='450'/>
+
+##Schema
+The database schema consists of a no-SQL databse implementing Parse in the Heroku cloud system. The application consists of a "User" and "Books." 
+
+####User
+- [ ] username - text
+  - [ ] first name - text
+  - [ ] last name - text
+- [ ] username password - text
+- [ ] profile - text
+  - [ ] profile picture - file
+  - [ ] description - text
+  - [ ] classes - text
+  - [ ] wish list - text
+- [ ] posts - text
+  - [ ] message - text
+  - [ ] created at - time
+- [ ] email - email
+
+####Books
+- [ ] title - text
+- [ ] author - text
+- [ ] bookcover - file
+- [ ] isbn - number
+- [ ] category - text
+  - [ ] related - text
 
 ## Video Walkthrough 
 
