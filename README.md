@@ -3,13 +3,13 @@ An iOS app which connects university students (TAMU) where they can easily sell 
 
 **Bookify** is a book sharing app used to simplify buying textbooks within Texas A&M for TAMU students.
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Be able to sign in and register
+- [x] Be able to sign in and register
 - [ ] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
 - [ ] Implement Popular, Sell, and Profile Tabs
 - [ ] Be able to post a book using the ISBN number and send it to the database as well as display in the app
