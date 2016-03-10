@@ -1,0 +1,6 @@
+framework module Pods_Bookify {
+  umbrella header "Pods-Bookify-umbrella.h"
+
+  export *
+  module * { export * }
+}
