@@ -1,21 +1,23 @@
 //
-//  SellViewController.swift
+//  TabBarViewController.swift
 //  Bookify
 //
-//  Created by Gerardo Vazquez on 3/9/16.
+//  Created by Gerardo Vazquez on 3/11/16.
 //  Copyright © 2016 Bookify. All rights reserved.
 //
 
 import UIKit
-import Parse
+import Font_Awesome_Swift
 
-
-class SellViewController: UIViewController {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //tabBarController?.tabBar.items?.first?.setFAIcon(FAType.FATwitter)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,9 +25,6 @@ class SellViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onPost(sender: AnyObject) {
-        PFUser.parseClassName()
-    }
 
     /*
     // MARK: - Navigation

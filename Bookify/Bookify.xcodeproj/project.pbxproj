@@ -19,6 +19,8 @@
 		E56A23FB1C91084E00A742A9 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FA1C91084E00A742A9 /* PopularViewController.swift */; };
 		E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FC1C91087D00A742A9 /* SellViewController.swift */; };
 		E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FE1C91089800A742A9 /* ProfileViewController.swift */; };
+		E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */; };
+		E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410B1C97886600082411 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E56A23FA1C91084E00A742A9 /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		E56A23FC1C91087D00A742A9 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		E56A23FE1C91089800A742A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E5EC410B1C97886600082411 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 		E56A23C81C91038600A742A9 /* Bookify */ = {
 			isa = PBXGroup;
 			children = (
+				E5EC410A1C97842900082411 /* Model */,
+				E596C0151C93C527007AB4D3 /* Controller */,
 				E56A23F71C9105D200A742A9 /* Views */,
 				E56A23C91C91038600A742A9 /* AppDelegate.swift */,
 				E56A23CB1C91038600A742A9 /* ViewController.swift */,
@@ -161,12 +167,28 @@
 		E56A23F71C9105D200A742A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E596C0151C93C527007AB4D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				E56A23F81C9106D400A742A9 /* LoginViewController.swift */,
 				E56A23FA1C91084E00A742A9 /* PopularViewController.swift */,
 				E56A23FC1C91087D00A742A9 /* SellViewController.swift */,
 				E56A23FE1C91089800A742A9 /* ProfileViewController.swift */,
+				E5EC410B1C97886600082411 /* SignupViewController.swift */,
 			);
-			name = Views;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E5EC410A1C97842900082411 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,8 +378,10 @@
 			files = (
 				E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */,
 				E56A23FB1C91084E00A742A9 /* PopularViewController.swift in Sources */,
+				E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */,
 				E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */,
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
+				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
 				E56A23CC1C91038600A742A9 /* ViewController.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
 			);

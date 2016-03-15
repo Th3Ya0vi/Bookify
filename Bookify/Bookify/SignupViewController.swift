@@ -1,16 +1,14 @@
 //
-//  SellViewController.swift
+//  SignupViewController.swift
 //  Bookify
 //
-//  Created by Gerardo Vazquez on 3/9/16.
+//  Created by Gerardo Vazquez on 3/14/16.
 //  Copyright © 2016 Bookify. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-
-class SellViewController: UIViewController {
+class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +21,6 @@ class SellViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onPost(sender: AnyObject) {
-        PFUser.parseClassName()
-    }
 
     /*
     // MARK: - Navigation

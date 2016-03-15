@@ -23,14 +23,22 @@ class LoginViewController: UIViewController {
             
             if user != nil {
                 print("User login")
-                //here is to direct the user directly to the homeViewController
+                //here is to direct the user directly to the popular
                 self.performSegueWithIdentifier("Popular", sender: nil)
                 
-                let vc: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("Popular")
-                self.presentViewController(vc as! UIViewController, animated: true, completion: nil)
+//                let vc: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("Popular")
+//                self.presentViewController(vc as! UIViewController, animated: true, completion: nil)
             }
             else{
                 print("error")
+                let alertController = UIAlertController(title: "Login", message: "Error. Please try again. Check your username or password.", preferredStyle: .Alert)
+                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                    //print(action)
+                }
+                alertController.addAction(okayAction)
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 
             }
         }
@@ -41,24 +49,27 @@ class LoginViewController: UIViewController {
     @IBAction func onSignup(sender: AnyObject) {
          /*** SIGN UP***/
         let new = PFUser()
-        
         new.username = usernameField.text
         new.password = passwordField.text
-        
         new.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
                 print("Yay, created a user!")
                 self.performSegueWithIdentifier("Popular", sender: nil)
-                
             } else {
                 print(error?.localizedDescription)
                 print("error sigup")
                 print(error?.code)
-                
                 if error?.code == 202 {
                     print("Username is taken")
+                    let alertUserTaken = UIAlertController(title: "Error", message: "Username is taken", preferredStyle: .Alert)
+                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                        //print(action)
+                    }
+                    alertUserTaken.addAction(okayAction)
+                    self.presentViewController(alertUserTaken, animated: true) {
+                        // ...
+                    }
                 }
-                
             }
         }
         /***SIGN UP***/
