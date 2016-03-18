@@ -86,7 +86,8 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Bookify/AFNetworking.framework"
   install_framework "Pods-Bookify/Bolts.framework"
-  install_framework "Pods-Bookify/Font_Awesome_Swift.framework"
+  install_framework "Pods-Bookify/FontAwesome_swift.framework"
+  install_framework "Pods-Bookify/Google_Material_Design_Icons_Swift.framework"
   install_framework "Pods-Bookify/LGSideMenuController.framework"
   install_framework "Pods-Bookify/Parse.framework"
   install_framework "Pods-Bookify/ParseUI.framework"
@@ -94,7 +95,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Bookify/AFNetworking.framework"
   install_framework "Pods-Bookify/Bolts.framework"
-  install_framework "Pods-Bookify/Font_Awesome_Swift.framework"
+  install_framework "Pods-Bookify/FontAwesome_swift.framework"
+  install_framework "Pods-Bookify/Google_Material_Design_Icons_Swift.framework"
   install_framework "Pods-Bookify/LGSideMenuController.framework"
   install_framework "Pods-Bookify/Parse.framework"
   install_framework "Pods-Bookify/ParseUI.framework"

@@ -8,26 +8,64 @@
 
 import UIKit
 import Parse
-import Font_Awesome_Swift
+import AFNetworking
 
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var searchIsbnLabel: UILabel!
+    @IBOutlet weak var searchIsbnField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var pictureButton: UIButton!
+    @IBOutlet weak var isbnLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var isbnField: UITextField!
     @IBOutlet weak var authorField: UITextField!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var previewCover: UIImageView!
     @IBOutlet weak var postButton: UIButton!
     
-    
+    var book: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-//        postButton.setFAIcon(FAType.Fa, iconSize: 25, forState: .Normal)
+        hideManual()
     }
-
+    
+    func hideManual(){
+        titleField.alpha = 0
+        authorField.alpha = 0
+        isbnField.alpha = 0
+        titleLabel.alpha = 0
+        authorLabel.alpha = 0
+        isbnLabel.alpha = 0
+        pictureButton.alpha = 0
+        postButton.alpha = 0
+        
+        searchIsbnField.alpha = 1
+        searchButton.alpha = 1
+        searchIsbnLabel.alpha = 1
+        
+    }
+    
+    func showManual(){
+        titleField.alpha = 1
+        authorField.alpha = 1
+        isbnField.alpha = 1
+        titleLabel.alpha = 1
+        authorLabel.alpha = 1
+        isbnLabel.alpha = 1
+        pictureButton.alpha = 1
+        postButton.alpha = 1
+        
+        searchIsbnField.alpha = 0
+        searchButton.alpha = 0
+        searchIsbnLabel.alpha = 0
+    }
+    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,6 +99,50 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    @IBAction func onSearch(sender: AnyObject) {
+        let base = "https://www.googleapis.com/books/v1/volumes?q=+isbn:"
+        let apiKey = "&key=AIzaSyC6LLlunLukIkI7iElDZZdXA4rQqqcMugo"
+        let isbn = searchIsbnField.text!
+        
+        let googleAPI = "\(base)\(isbn)\(apiKey)"
+        
+        let url = NSURL(string: googleAPI)
+        let request = NSURLRequest(
+            URL: url!,
+            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
+            timeoutInterval: 5)
+        
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate: nil,
+            delegateQueue: NSOperationQueue.mainQueue()
+        )
+        
+        //Show HUD before the request is made
+        //        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        //        HUDindicator.labelText = "Loading"
+        //        HUDindicator.detailsLabelText = "Please wait"
+        
+        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            completionHandler: { (dataOrNil, response, error) in
+                if let data = dataOrNil {
+                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                        data, options:[]) as? NSDictionary {
+                            //print("response: \(responseDictionary)")
+                            //Hide HUD after request is done
+                            //HUDindicator.hide(true)
+                            
+                            self.book = responseDictionary["items"] as? [NSDictionary]
+                            //self.tableView.reloadData()
+                            //print(self.book)
+                    }
+                }
+        })
+        task.resume()
+        
+        showManual()
     }
 
     

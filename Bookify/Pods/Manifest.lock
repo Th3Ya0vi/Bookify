@@ -15,7 +15,8 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.6.0)
-  - Font-Awesome-Swift (1.4.5)
+  - FontAwesome.swift (0.7.1)
+  - Google-Material-Design-Icons-Swift (1.0.1)
   - LGSideMenuController (1.0.10)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
@@ -25,7 +26,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Font-Awesome-Swift
+  - FontAwesome.swift
+  - Google-Material-Design-Icons-Swift
   - LGSideMenuController
   - Parse
   - ParseUI
@@ -33,7 +35,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Bolts: f52a250053bb517ca874523c3913776359ab3def
-  Font-Awesome-Swift: 0af30357ab68dbcfa2d211254a5c11a158261112
+  FontAwesome.swift: 21ec9db57af8b92d4b4d6ca8208b9ae07031e828
+  Google-Material-Design-Icons-Swift: ff587db57d713061f66b8457229d1af2cae84c56
   LGSideMenuController: 8682bdbd0008c1acfbce95eaf96cc3657bca5f95
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
