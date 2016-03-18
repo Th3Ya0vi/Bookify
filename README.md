@@ -3,7 +3,7 @@ An iOS app which connects university students (TAMU) where they can easily sell 
 
 **Bookify** is a book sharing app used to simplify buying textbooks within Texas A&M for TAMU students.
 
-Time spent: **2** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
