@@ -1,30 +1,19 @@
 //
-//  ProfileViewController.swift
+//  SignupViewController.swift
 //  Bookify
 //
-//  Created by Gerardo Vazquez on 3/9/16.
+//  Created by Gerardo Vazquez on 3/14/16.
 //  Copyright © 2016 Bookify. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIAlertViewDelegate {
+class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        let alertController = UIAlertController(title: "Profile", message: "NO PROFILE", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-            //print(action)
-        }
-        alertController.addAction(cancelAction)
-        self.presentViewController(alertController, animated: true) {
-            // ...
-        }
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
