@@ -21,6 +21,7 @@
 		E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FE1C91089800A742A9 /* ProfileViewController.swift */; };
 		E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */; };
 		E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410B1C97886600082411 /* SignupViewController.swift */; };
+		E5EC410E1C987E2400082411 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410D1C987E2400082411 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E56A23FE1C91089800A742A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E5EC410B1C97886600082411 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E5EC410D1C987E2400082411 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		E5EC410A1C97842900082411 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5EC410D1C987E2400082411 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */,
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
+				E5EC410E1C987E2400082411 /* Post.swift in Sources */,
 				E56A23CC1C91038600A742A9 /* ViewController.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
 			);
