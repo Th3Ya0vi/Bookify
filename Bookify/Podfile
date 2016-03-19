@@ -6,8 +6,10 @@ use_frameworks!
 target 'Bookify' do
     pod 'Parse'
     pod 'AFNetworking'
+    pod 'MBProgressHUD'
     pod 'ParseUI'
-    pod 'Font-Awesome-Swift'
+    pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'
+    pod 'FontAwesome.swift'
     pod 'LGSideMenuController'
 end
 

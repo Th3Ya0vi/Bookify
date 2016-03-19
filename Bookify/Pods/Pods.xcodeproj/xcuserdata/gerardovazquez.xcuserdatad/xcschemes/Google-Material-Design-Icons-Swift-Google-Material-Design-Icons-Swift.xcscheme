@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D53DA344C0466DD952961FB2'
-               BlueprintName = 'Parse'
+               BlueprintIdentifier = '53635AEC8875B3829967909B'
+               BlueprintName = 'Google-Material-Design-Icons-Swift-Google-Material-Design-Icons-Swift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Parse.framework'>
+               BuildableName = 'Google-Material-Design-Icons-Swift.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

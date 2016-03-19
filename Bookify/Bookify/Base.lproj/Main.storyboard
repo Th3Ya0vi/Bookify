@@ -70,6 +70,25 @@
             </objects>
             <point key="canvasLocation" x="287.5" y="308.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HkB-II-tTm">
+            <objects>
+                <viewController id="6xe-JR-afY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BYk-Ek-8gS"/>
+                        <viewControllerLayoutGuide type="bottom" id="WNk-1q-U9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RMR-To-f0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61U-mp-8ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287.5" y="1110.5"/>
+        </scene>
         <!--Sell-->
         <scene sceneID="a0G-zM-CUN">
             <objects>
@@ -82,37 +101,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-uu-uhf">
+                                <rect key="frame" x="139" y="400" width="96" height="30"/>
+                                <state key="normal" title="Select Picture"/>
+                                <connections>
+                                    <action selector="onPicture:" destination="KKe-qN-tCc" eventType="touchUpInside" id="sOi-Rj-EdA"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSh-LH-I3y">
-                                <rect key="frame" x="127" y="79" width="34" height="30"/>
+                                <rect key="frame" x="127" y="130" width="34" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-1m-Xc6">
-                                <rect key="frame" x="169" y="123" width="97" height="30"/>
+                                <rect key="frame" x="169" y="174" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHC-4y-I7w">
-                                <rect key="frame" x="109" y="123" width="52" height="30"/>
+                                <rect key="frame" x="109" y="174" width="52" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F42-jN-emz">
-                                <rect key="frame" x="169" y="171" width="97" height="30"/>
+                                <rect key="frame" x="169" y="222" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aye-gv-uEi">
-                                <rect key="frame" x="123" y="171" width="38" height="30"/>
+                                <rect key="frame" x="123" y="222" width="38" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zry-W6-z7u">
-                                <rect key="frame" x="169" y="79" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="169" y="130" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-Vb-iY6">
@@ -122,16 +148,27 @@
                                     <action selector="onPost:" destination="KKe-qN-tCc" eventType="touchUpInside" id="V8a-mT-8WV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-uu-uhf">
-                                <rect key="frame" x="139" y="264" width="96" height="30"/>
-                                <state key="normal" title="Select Picture"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-Am-bH9">
+                                <rect key="frame" x="45" y="20" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-Wb-Htb">
+                                <rect key="frame" x="27" y="255" width="320" height="320"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZrI-bk-3dD">
+                                <rect key="frame" x="88" y="49" width="198" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3H-N0-qfO">
+                                <rect key="frame" x="163" y="82" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="onPicture:" destination="KKe-qN-tCc" eventType="touchUpInside" id="sOi-Rj-EdA"/>
+                                    <action selector="onSearch:" destination="KKe-qN-tCc" eventType="touchUpInside" id="xzb-Gx-hxW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-Wb-Htb">
-                                <rect key="frame" x="27" y="216" width="320" height="320"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -139,10 +176,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="authorField" destination="NMA-1m-Xc6" id="m2t-KI-3n5"/>
+                        <outlet property="authorLabel" destination="zHC-4y-I7w" id="qyh-6v-M0A"/>
                         <outlet property="isbnField" destination="F42-jN-emz" id="JnR-8h-27Y"/>
+                        <outlet property="isbnLabel" destination="aye-gv-uEi" id="0fq-SK-Rdz"/>
+                        <outlet property="pictureButton" destination="yxE-uu-uhf" id="2P7-Re-bRj"/>
                         <outlet property="postButton" destination="ecQ-Vb-iY6" id="n2r-ND-XOw"/>
                         <outlet property="previewCover" destination="Ytp-Wb-Htb" id="wT8-Pt-cLh"/>
+                        <outlet property="searchButton" destination="v3H-N0-qfO" id="ZDc-Xe-xPu"/>
+                        <outlet property="searchIsbnField" destination="ZrI-bk-3dD" id="3S6-L1-NVT"/>
+                        <outlet property="searchIsbnLabel" destination="ZUb-Am-bH9" id="mcX-Z4-UBP"/>
                         <outlet property="titleField" destination="zry-W6-z7u" id="xeb-IO-8LT"/>
+                        <outlet property="titleLabel" destination="sSh-LH-I3y" id="xyc-sM-DWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwJ-Vp-GNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,7 +236,7 @@
         <!--Menu-->
         <scene sceneID="54A-Wl-zck">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" title="Menu" id="bsA-xt-5jZ" customClass="TabBarViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsA-xt-5jZ" customClass="TabBarViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="P4w-R6-TNV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
