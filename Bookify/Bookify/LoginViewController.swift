@@ -10,12 +10,10 @@ import UIKit
 import Parse
 import ParseUI
 
-
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBAction func onSignin(sender: AnyObject) {
          /*** SIGN IN ***/
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!){
@@ -39,11 +37,9 @@ class LoginViewController: UIViewController {
                 self.presentViewController(alertController, animated: true) {
                     // ...
                 }
-                
             }
         }
          /*** SIGN IN ***/
-        
     }
     
     @IBAction func onSignup(sender: AnyObject) {
