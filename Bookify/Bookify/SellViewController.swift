@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AFNetworking
+import MBProgressHUD
 
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -112,7 +113,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
-            timeoutInterval: 5)
+            timeoutInterval: 10)
         
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -121,9 +122,9 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         )
         
         //Show HUD before the request is made
-        //        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        //        HUDindicator.labelText = "Loading"
-        //        HUDindicator.detailsLabelText = "Please wait"
+                let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                HUDindicator.labelText = "Loading"
+                HUDindicator.detailsLabelText = "Please wait"
         
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
@@ -137,12 +138,45 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                             self.book = responseDictionary["items"] as? [NSDictionary]
                             //self.tableView.reloadData()
                             //print(self.book)
+                            
+                            self.parseDictionary()
+                            HUDindicator.hide(true)
                     }
                 }
         })
         task.resume()
         
         showManual()
+    }
+    
+    func parseDictionary(){
+        if self.book != nil{
+            let items = book![0]
+            let volumeInfo = items["volumeInfo"]
+            
+            //title
+            let title = volumeInfo!["title"] as? String
+            //print ("Title \(title)")
+            titleField.text = title
+            
+            //image
+            let imageLinks = volumeInfo!["imageLinks"]
+            let thumbnail = imageLinks!!["thumbnail"] as? String
+            //print("url \(thumbnail)")
+            let imageUrl = NSURL(string: thumbnail!)
+            previewCover.setImageWithURL(imageUrl!)
+            
+            //author
+            let authors = volumeInfo!["authors"]
+            authorField.text = authors!![0] as? String
+            //print(authors)
+            
+            //isbn
+            isbnField.text = searchIsbnLabel.text
+        }
+        else{
+            print("no book")
+        }
     }
 
     
