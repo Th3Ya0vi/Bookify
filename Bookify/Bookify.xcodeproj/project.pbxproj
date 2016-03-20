@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9FA64836EE1922C25207FFBB /* Pods_Bookify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */; };
 		E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23C91C91038600A742A9 /* AppDelegate.swift */; };
-		E56A23CC1C91038600A742A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23CB1C91038600A742A9 /* ViewController.swift */; };
 		E56A23D11C91038600A742A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A23D01C91038600A742A9 /* Assets.xcassets */; };
 		E56A23D41C91038600A742A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A23D21C91038600A742A9 /* LaunchScreen.storyboard */; };
 		E56A23DF1C91038600A742A9 /* BookifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23DE1C91038600A742A9 /* BookifyTests.swift */; };
@@ -28,6 +27,8 @@
 		E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410B1C97886600082411 /* SignupViewController.swift */; };
 		E5EC410E1C987E2400082411 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410D1C987E2400082411 /* Post.swift */; };
 		E5EC41101C9CB65E00082411 /* GoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410F1C9CB65E00082411 /* GoogleAPI.swift */; };
+		E5FE8FDE1C9F33C7004284C3 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */; };
+		E5FE8FE21C9F3554004284C3 /* Bookify-96.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FE8FE11C9F3554004284C3 /* Bookify-96.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +54,6 @@
 		DE35003243AA0AB9726FC70B /* Pods-Bookify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.release.xcconfig"; sourceTree = "<group>"; };
 		E56A23C61C91038600A742A9 /* Bookify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56A23C91C91038600A742A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E56A23CB1C91038600A742A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E56A23D01C91038600A742A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E56A23D31C91038600A742A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E56A23D51C91038600A742A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		E5EC410B1C97886600082411 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E5EC410D1C987E2400082411 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E5EC410F1C9CB65E00082411 /* GoogleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAPI.swift; sourceTree = "<group>"; };
+		E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		E5FE8FE11C9F3554004284C3 /* Bookify-96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bookify-96.png"; path = "../../BookifyLogo&Icons/Bookify-96.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +155,6 @@
 				E56A23F71C9105D200A742A9 /* Views */,
 				E56A23C91C91038600A742A9 /* AppDelegate.swift */,
 				E58E61501C9E0A1100B6EA04 /* Main.storyboard */,
-				E56A23CB1C91038600A742A9 /* ViewController.swift */,
 				E56A23D01C91038600A742A9 /* Assets.xcassets */,
 				E56A23D21C91038600A742A9 /* LaunchScreen.storyboard */,
 				E56A23D51C91038600A742A9 /* Info.plist */,
@@ -189,6 +190,7 @@
 		E58E61531C9F12EA00B6EA04 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E5FE8FE11C9F3554004284C3 /* Bookify-96.png */,
 				E58E61601C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png */,
 				E58E615E1C9F154300B6EA04 /* iconmonstr-currency-2-24.png */,
 				E58E615C1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png */,
@@ -211,6 +213,7 @@
 			children = (
 				E56A23FC1C91087D00A742A9 /* SellViewController.swift */,
 				E58E61641C9F234F00B6EA04 /* SearchViewController.swift */,
+				E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */,
 			);
 			name = Sell;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FE8FE21C9F3554004284C3 /* Bookify-96.png in Resources */,
 				E58E61521C9E0A1100B6EA04 /* Main.storyboard in Resources */,
 				E56A23D41C91038600A742A9 /* LaunchScreen.storyboard in Resources */,
 				E58E61611C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png in Resources */,
@@ -425,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FE8FDE1C9F33C7004284C3 /* PostViewController.swift in Sources */,
 				E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */,
 				E58E61651C9F234F00B6EA04 /* SearchViewController.swift in Sources */,
 				E56A23FB1C91084E00A742A9 /* PopularViewController.swift in Sources */,
@@ -434,7 +439,6 @@
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
 				E5EC410E1C987E2400082411 /* Post.swift in Sources */,
-				E56A23CC1C91038600A742A9 /* ViewController.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

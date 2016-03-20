@@ -298,7 +298,7 @@
         <!--Search-->
         <scene sceneID="idQ-Qb-o1w">
             <objects>
-                <viewController storyboardIdentifier="Search" title="Search" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UWA-1N-40K" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Search" title="Search" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UWA-1N-40K" customClass="SearchViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4xA-hT-5cm"/>
                         <viewControllerLayoutGuide type="bottom" id="jYQ-lZ-y09"/>
@@ -340,7 +340,7 @@
         <!--Post-->
         <scene sceneID="bVT-jp-Qm2">
             <objects>
-                <viewController storyboardIdentifier="Post" title="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llj-yc-O8h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Post" title="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llj-yc-O8h" customClass="PostViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oPC-rf-QTl"/>
                         <viewControllerLayoutGuide type="bottom" id="yxQ-1g-lhA"/>

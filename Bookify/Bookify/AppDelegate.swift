@@ -27,20 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
-//        if PFUser.currentUser() != nil {
-//            print("Current user detected: \(PFUser.currentUser()!.username)")
-//            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-//            window?.rootViewController = vc
-//        } else {
-//            let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
-//            window?.rootViewController = vc
-//        }
-        
         if PFUser.currentUser() != nil {
             print("Current user detected: \(PFUser.currentUser()!.username)")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+            window?.rootViewController = vc
+        } else {
+            print("Current user not detected")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
+            window?.rootViewController = vc
         }
-        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-        window?.rootViewController = vc
+        
+//        if PFUser.currentUser() != nil {
+//            print("Current user detected: \(PFUser.currentUser()!.username)")
+//        }
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+//        window?.rootViewController = vc
         
         return true
     }

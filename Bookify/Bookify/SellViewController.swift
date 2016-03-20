@@ -135,29 +135,45 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         HUDindicator.labelText = "Posting"
         HUDindicator.detailsLabelText = "Please wait"
         
-        Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
-            if success {
-                print("Posted to Parse")
-                self.previewCover.image = nil
-                self.titleField.text = ""
-                self.authorField.text = ""
-                self.isbnField.text = ""
-                
-                HUDindicator.hide(true)
-                
-                let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
-                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                    //print(action)
+        if previewCover.image != nil && titleField.hasText() && authorField.hasText() && isbnField.hasText(){
+            Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
+                if success {
+                    print("Success: posted to Parse")
+                    self.previewCover.image = nil
+                    self.titleField.text = ""
+                    self.authorField.text = ""
+                    self.isbnField.text = ""
+                    
+                    HUDindicator.hide(true)
+                    
+                    let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
+                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                        //print(action)
+                    }
+                    alertUserTaken.addAction(okayAction)
+                    self.presentViewController(alertUserTaken, animated: true) {
+                        // ...
+                    }
                 }
-                alertUserTaken.addAction(okayAction)
-                self.presentViewController(alertUserTaken, animated: true) {
-                    // ...
+                else {
+                    print("Error: can't post to parse")
+                    HUDindicator.hide(true)
+                    let alertUserTaken = UIAlertController(title: "Error", message: "Please complete submission.", preferredStyle: .Alert)
+                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                        //print(action)
+                    }
+                    alertUserTaken.addAction(okayAction)
+                    self.presentViewController(alertUserTaken, animated: true) {
+                        // ...
+                    }
+
                 }
             }
-            else {
-                print("Can't post to parse")
-                HUDindicator.hide(true)
-            }
+
+        }
+        else{
+            print("Error: fields missing")
+            HUDindicator.hide(true)
         }
     }
     
@@ -197,7 +213,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             isbnField.text = searchIsbnField.text
         }
         else{
-            print("no book")
+            print("Error: no book")
         }
     }
 
