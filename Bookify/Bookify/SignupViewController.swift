@@ -15,6 +15,7 @@ class SignupViewController: UIViewController {
     var new = PFUser()
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var password2Field: UITextField!
     @IBOutlet weak var emailField: UITextField!
     
     @IBAction func onTap(sender: AnyObject) {
@@ -24,36 +25,60 @@ class SignupViewController: UIViewController {
     @IBAction func signupButton(sender: AnyObject) {
         
         let progress = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        progress.labelText = "Loading"
+        progress.labelText = "Sign up"
         progress.detailsLabelText = "Please wait"
         
         new.username = usernameField.text
         new.password = passwordField.text
         new.email = emailField.text
         
-        if emailField.hasText() && usernameField.hasText() && emailField.hasText(){
-            
-            if emailField.text!.containsString("@tamu.edu"){
-                print("Success: TAMU email")
-                parseSignup()
+        if emailField.hasText() && usernameField.hasText() && passwordField.hasText(){
+            print("Success: form is complete")
+            if passwordField.text! == password2Field.text!{
+                print("Success: passwords match")
+                if emailField.text!.containsString("@tamu.edu"){
+                    print("Success: TAMU email")
+                    parseSignup()
+                }
+                else{
+                    print("Error: not TAMU email")
+                    progress.hide(true)
+                    let alertController = UIAlertController(title: "Error", message: "Please use your TAMU email.", preferredStyle: .Alert)
+                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                        //print(action)
+                    }
+                    alertController.addAction(okayAction)
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
+
+                }
+                progress.hide(true)
             }
             else{
-                print("Error: not TAMU email")
+                print("Error: password does not match")
+                progress.hide(true)
+                let alertController = UIAlertController(title: "Login", message: "Error. Please try again. Check your username or password.", preferredStyle: .Alert)
+                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                    //print(action)
+                }
+                alertController.addAction(okayAction)
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
             }
-            progress.hide(true)
         }
         else{
-            progress.hide(true)
             print("Error: empty signup fields")
-//            let alertUserTaken = UIAlertController(title: "Error", message: "Username is taken", preferredStyle: .Alert)
-//            let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-//                //print(action)
-//            }
-//            alertUserTaken.addAction(okayAction)
-//            self.presentViewController(alertUserTaken, animated: true) {
-//                // ...
-//            }
-
+            progress.hide(true)
+            let alertController = UIAlertController(title: "Error", message: "Passwords do not match.", preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                //print(action)
+            }
+            alertController.addAction(okayAction)
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
         }
     }
     
@@ -66,18 +91,18 @@ class SignupViewController: UIViewController {
                 
             } else {
                 print(error?.localizedDescription)
-                print("Error: invalid register.")
+                //print("Error: invalid register.")
                 //print(error?.code)
                 if error?.code == 202 {
                     print("Error: user is taken in register.")
-//                    let alertUserTaken = UIAlertController(title: "Error", message: "Username is taken", preferredStyle: .Alert)
-//                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-//                        //print(action)
-//                    }
-//                    alertUserTaken.addAction(okayAction)
-//                    self.presentViewController(alertUserTaken, animated: true) {
-//                        // ...
-//                    }
+                    let alertUserTaken = UIAlertController(title: "Error", message: "Username is taken.", preferredStyle: .Alert)
+                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                        //print(action)
+                    }
+                    alertUserTaken.addAction(okayAction)
+                    self.presentViewController(alertUserTaken, animated: true) {
+                        // ...
+                    }
                 }
             }
         }

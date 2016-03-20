@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
          /*** SIGN IN ***/
         
         let progress = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        progress.labelText = "Loading"
+        progress.labelText = "Sign-in"
         progress.detailsLabelText = "Please wait"
         
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!){
