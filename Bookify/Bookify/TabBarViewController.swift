@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 
 class TabBarViewController: UITabBarController {
@@ -14,10 +15,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        //tabBarController?.tabBar.items?.first?.setFAIcon(FAType.FATwitter)
-        
+//        bar![0].image = UIImage.fontAwesomeIconWithName(.Star, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+//        bar![1].image = UIImage.fontAwesomeIconWithName(.USD, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+//        bar![3].image = UIImage.fontAwesomeIconWithName(.User, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+        //self.tabBarController =
     }
 
     override func didReceiveMemoryWarning() {

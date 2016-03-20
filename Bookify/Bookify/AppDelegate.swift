@@ -27,14 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+//        if PFUser.currentUser() != nil {
+//            print("Current user detected: \(PFUser.currentUser()!.username)")
+//            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+//            window?.rootViewController = vc
+//        } else {
+//            let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
+//            window?.rootViewController = vc
+//        }
+        
         if PFUser.currentUser() != nil {
             print("Current user detected: \(PFUser.currentUser()!.username)")
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-            window?.rootViewController = vc
-        } else {
-            let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
-            window?.rootViewController = vc
         }
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        window?.rootViewController = vc
+        
         return true
     }
 
@@ -58,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        PFUser.logOut()
     }
 
 

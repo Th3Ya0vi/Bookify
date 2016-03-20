@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hHs-iQ-NTZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -34,9 +34,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-gq-6MH">
-                                <rect key="frame" x="127" y="383" width="30" height="30"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9p-nB-7J4">
                                 <rect key="frame" x="67" y="371" width="48" height="30"/>
                                 <state key="normal" title="sign-in"/>
@@ -45,8 +42,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-9z-7qL">
-                                <rect key="frame" x="259" y="371" width="50" height="30"/>
-                                <state key="normal" title="sign up"/>
+                                <rect key="frame" x="258" y="371" width="53" height="30"/>
+                                <state key="normal" title="register"/>
                                 <connections>
                                     <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVM-hk-hAc"/>
                                 </connections>
@@ -58,22 +55,33 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hpq-qy-fDT" appends="YES" id="ISY-XB-ud4"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="cH6-6I-XAG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordField" destination="efx-Zc-2mP" id="R9q-yA-n05"/>
                         <outlet property="usernameField" destination="EZe-Vb-CGP" id="9aH-Es-QJy"/>
                         <segue destination="bsA-xt-5jZ" kind="presentation" identifier="loginMenu" id="88F-Tf-zyS"/>
+                        <segue destination="6xe-JR-afY" kind="show" identifier="Signup" action="showDetailViewController:sender:" id="sA9-85-4q4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hpq-qy-fDT">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="pQX-6O-1ep"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="287.5" y="308.5"/>
+            <point key="canvasLocation" x="702.5" y="309.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup-->
         <scene sceneID="HkB-II-tTm">
             <objects>
-                <viewController id="6xe-JR-afY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Signup" title="Signup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6xe-JR-afY" customClass="SignupViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BYk-Ek-8gS"/>
                         <viewControllerLayoutGuide type="bottom" id="WNk-1q-U9c"/>
@@ -81,15 +89,73 @@
                     <view key="view" contentMode="scaleToFill" id="RMR-To-f0Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-L6-IH9">
+                                <rect key="frame" x="67" y="187" width="238" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20I-Ny-GPD">
+                                <rect key="frame" x="148" y="158" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4li-BZ-PZq">
+                                <rect key="frame" x="66" y="315" width="238" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oed-MQ-Jdt">
+                                <rect key="frame" x="167" y="286" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6T-eF-0Sk">
+                                <rect key="frame" x="162" y="386" width="50" height="30"/>
+                                <state key="normal" title="sign up"/>
+                                <connections>
+                                    <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="grC-RM-9DS"/>
+                                    <action selector="signupButton:" destination="6xe-JR-afY" eventType="touchUpInside" id="CL9-eY-IcC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ9-Ay-T2w">
+                                <rect key="frame" x="67" y="248" width="238" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Kz-DGF">
+                                <rect key="frame" x="150" y="219" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4sK-v1-OyJ" appends="YES" id="Erq-HO-Ptj"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="4li-BZ-PZq" id="Q7U-hT-Qjf"/>
+                        <outlet property="passwordField" destination="BJ9-Ay-T2w" id="Avr-E7-a9J"/>
+                        <outlet property="usernameField" destination="W3f-L6-IH9" id="W3C-lm-U0q"/>
+                        <segue destination="bsA-xt-5jZ" kind="presentation" identifier="loginMenu" id="NEJ-my-iZ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61U-mp-8ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4sK-v1-OyJ">
+                    <connections>
+                        <action selector="onTap:" destination="6xe-JR-afY" id="CL6-pk-gEM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="287.5" y="1110.5"/>
+            <point key="canvasLocation" x="702.5" y="1153.5"/>
         </scene>
-        <!--Sell-->
+        <!--Sell View Controller-->
         <scene sceneID="a0G-zM-CUN">
             <objects>
                 <viewController id="KKe-qN-tCc" customClass="SellViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,31 +214,35 @@
                                     <action selector="onPost:" destination="KKe-qN-tCc" eventType="touchUpInside" id="V8a-mT-8WV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-Am-bH9">
-                                <rect key="frame" x="45" y="20" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-Wb-Htb">
                                 <rect key="frame" x="27" y="255" width="320" height="320"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZrI-bk-3dD">
-                                <rect key="frame" x="88" y="49" width="198" height="30"/>
+                                <rect key="frame" x="88" y="122" width="198" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3H-N0-qfO">
-                                <rect key="frame" x="163" y="82" width="48" height="30"/>
+                                <rect key="frame" x="163" y="150" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="onSearch:" destination="KKe-qN-tCc" eventType="touchUpInside" id="xzb-Gx-hxW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-Am-bH9">
+                                <rect key="frame" x="88" y="101" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="625-XE-z71" appends="YES" id="Swy-8e-lXc"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sell" id="ZNN-zo-qIl"/>
+                    <navigationItem key="navigationItem" id="VC1-Y8-xKd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="authorField" destination="NMA-1m-Xc6" id="m2t-KI-3n5"/>
@@ -190,8 +260,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwJ-Vp-GNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="625-XE-z71">
+                    <connections>
+                        <action selector="onTap:" destination="KKe-qN-tCc" id="NMN-tU-Xnu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1575.5" y="692.5"/>
+            <point key="canvasLocation" x="2413.5" y="309.5"/>
         </scene>
         <!--Profile-->
         <scene sceneID="IgP-Qv-9mu">
@@ -206,12 +281,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="hsE-kB-rIk"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Profile" image="iconmonstr-user-6-24.png" id="hsE-kB-rIk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2k-bM-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575.5" y="1419.5"/>
+            <point key="canvasLocation" x="1342.5" y="1153.5"/>
         </scene>
         <!--Popular-->
         <scene sceneID="m3X-QZ-ubk">
@@ -226,17 +301,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Popular" id="nn1-6a-tqk"/>
+                    <navigationItem key="navigationItem" id="g3z-iA-4zY">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="EyK-HK-TeS">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MX5-3m-7Mv">
+                                <rect key="frame" x="311" y="7" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="tRu-2V-1Ve" eventType="touchUpInside" id="RwR-k1-bVS"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="hHs-iQ-NTZ" kind="presentation" identifier="Login" id="QBL-V8-Tl2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tll-yX-4cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575.5" y="-20.5"/>
+            <point key="canvasLocation" x="2307.5" y="-490.5"/>
         </scene>
         <!--Menu-->
         <scene sceneID="54A-Wl-zck">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsA-xt-5jZ" customClass="TabBarViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsA-xt-5jZ" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="P4w-R6-TNV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -244,14 +333,78 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tRu-2V-1Ve" kind="relationship" relationship="viewControllers" id="gSi-K7-rcN"/>
-                        <segue destination="KKe-qN-tCc" kind="relationship" relationship="viewControllers" id="mbN-du-TqK"/>
+                        <segue destination="TBT-aL-QAl" kind="relationship" relationship="viewControllers" id="gSi-K7-rcN"/>
+                        <segue destination="NAk-vy-Rut" kind="relationship" relationship="viewControllers" id="mbN-du-TqK"/>
                         <segue destination="JV9-Fu-6jm" kind="relationship" relationship="viewControllers" id="Bh6-ad-PLX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEQ-do-brO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755.5" y="309.5"/>
+            <point key="canvasLocation" x="1342.5" y="309.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fea-S3-t0W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hHs-iQ-NTZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sFj-ST-s3W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bXB-bq-Vqi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jc5-pd-0Nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195.5" y="309.5"/>
+        </scene>
+        <!--Sell-->
+        <scene sceneID="wru-z8-3Kh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAk-vy-Rut" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Sell" image="iconmonstr-banknote-15-24.png" id="ZNN-zo-qIl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQm-2c-xwy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KKe-qN-tCc" kind="relationship" relationship="rootViewController" id="Dw0-tr-kuu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1H-j1-Pvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.5" y="309.5"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="jhz-bl-53w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TBT-aL-QAl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="iconmonstr-star-5-24.png" id="nn1-6a-tqk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O2V-aF-D2J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tRu-2V-1Ve" kind="relationship" relationship="rootViewController" id="VEd-JQ-iqh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAS-a2-C2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826.5" y="-490.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconmonstr-banknote-15-24.png" width="24" height="24"/>
+        <image name="iconmonstr-star-5-24.png" width="24" height="24"/>
+        <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NEJ-my-iZ4"/>
+    </inferredMetricsTieBreakers>
 </document>

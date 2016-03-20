@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import AFNetworking
 import MBProgressHUD
+import FontAwesome_swift
 
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -29,44 +30,18 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var book: [NSDictionary]?
     
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.USD, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+
         hideManual()
     }
     
-    func hideManual(){
-        titleField.alpha = 0
-        authorField.alpha = 0
-        isbnField.alpha = 0
-        titleLabel.alpha = 0
-        authorLabel.alpha = 0
-        isbnLabel.alpha = 0
-        pictureButton.alpha = 0
-        postButton.alpha = 0
-        
-        searchIsbnField.alpha = 1
-        searchButton.alpha = 1
-        searchIsbnLabel.alpha = 1
-        
-    }
-    
-    func showManual(){
-        titleField.alpha = 1
-        authorField.alpha = 1
-        isbnField.alpha = 1
-        titleLabel.alpha = 1
-        authorLabel.alpha = 1
-        isbnLabel.alpha = 1
-        pictureButton.alpha = 1
-        postButton.alpha = 1
-        
-        searchIsbnField.alpha = 0
-        searchButton.alpha = 0
-        searchIsbnLabel.alpha = 0
-    }
-    
-        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,50 +78,97 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func onSearch(sender: AnyObject) {
-        let base = "https://www.googleapis.com/books/v1/volumes?q=+isbn:"
-        let apiKey = "&key=AIzaSyC6LLlunLukIkI7iElDZZdXA4rQqqcMugo"
-        let isbn = searchIsbnField.text!
         
-        let googleAPI = "\(base)\(isbn)\(apiKey)"
-        
-        let url = NSURL(string: googleAPI)
-        let request = NSURLRequest(
-            URL: url!,
-            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
-            timeoutInterval: 10)
-        
-        let session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-            delegate: nil,
-            delegateQueue: NSOperationQueue.mainQueue()
-        )
+        if isValidIsbn(){
+            //Show HUD before the request is made
+            let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            HUDindicator.labelText = "Loading Book"
+            HUDindicator.detailsLabelText = "Please wait"
+            
+            let base = "https://www.googleapis.com/books/v1/volumes?q=+isbn:"
+            let apiKey = "&key=AIzaSyC6LLlunLukIkI7iElDZZdXA4rQqqcMugo"
+            let isbn = searchIsbnField.text!
+            let googleAPI = "\(base)\(isbn)\(apiKey)"
+            
+            let url = NSURL(string: googleAPI)
+            let request = NSURLRequest(
+                URL: url!,
+                cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
+                timeoutInterval: 10)
+            
+            let session = NSURLSession(
+                configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+                delegate: nil,
+                delegateQueue: NSOperationQueue.mainQueue()
+            )
+            
+            let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
+                completionHandler: { (dataOrNil, response, error) in
+                    if let data = dataOrNil {
+                        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                            data, options:[]) as? NSDictionary {
+                                //print("response: \(responseDictionary)")
+                                //Hide HUD after request is done
+                                //HUDindicator.hide(true)
+                                
+                                self.book = responseDictionary["items"] as? [NSDictionary]
+                                //self.tableView.reloadData()
+                                //print(self.book)
+                                
+                                self.parseDictionary()
+                                HUDindicator.hide(true)
+                        }
+                    }
+            })
+            task.resume()
+        }
+        else{
+            print("Error: Not a valid ISBN")
+        }
+        showManual()
+    }
+    
+    @IBAction func onPost(sender: AnyObject) {
         
         //Show HUD before the request is made
-                let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                HUDindicator.labelText = "Loading"
-                HUDindicator.detailsLabelText = "Please wait"
+        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        HUDindicator.labelText = "Posting"
+        HUDindicator.detailsLabelText = "Please wait"
         
-        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
-            completionHandler: { (dataOrNil, response, error) in
-                if let data = dataOrNil {
-                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                        data, options:[]) as? NSDictionary {
-                            //print("response: \(responseDictionary)")
-                            //Hide HUD after request is done
-                            //HUDindicator.hide(true)
-                            
-                            self.book = responseDictionary["items"] as? [NSDictionary]
-                            //self.tableView.reloadData()
-                            //print(self.book)
-                            
-                            self.parseDictionary()
-                            HUDindicator.hide(true)
-                    }
+        Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
+            if success {
+                print("Posted to Parse")
+                self.previewCover.image = nil
+                self.titleField.text = ""
+                self.authorField.text = ""
+                self.isbnField.text = ""
+                
+                HUDindicator.hide(true)
+                
+                let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
+                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                    //print(action)
                 }
-        })
-        task.resume()
-        
-        showManual()
+                alertUserTaken.addAction(okayAction)
+                self.presentViewController(alertUserTaken, animated: true) {
+                    // ...
+                }
+            }
+            else {
+                print("Can't post to parse")
+                HUDindicator.hide(true)
+            }
+        }
+    }
+    
+    func isValidIsbn() -> Bool{
+        if searchIsbnField.hasText(){
+            //let isbn = searchIsbnField.text! as String
+            return true
+        }
+        else{
+            return false
+        }
     }
     
     func parseDictionary(){
@@ -172,40 +194,46 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             //print(authors)
             
             //isbn
-            isbnField.text = searchIsbnLabel.text
+            isbnField.text = searchIsbnField.text
         }
         else{
             print("no book")
         }
     }
 
-    
-    @IBAction func onPost(sender: AnyObject) {
-        Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
-            if success {
-                print("Posted to Parse")
-                self.previewCover.image = nil
-                self.titleField.text = ""
-                self.authorField.text = ""
-                self.isbnField.text = ""
-                
-                let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
-                let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                    //print(action)
-                }
-                alertUserTaken.addAction(okayAction)
-                self.presentViewController(alertUserTaken, animated: true) {
-                    // ...
-                }
-
-            }
-            else {
-                print("Can't post to parse")
-            }
-
-        }
+    func hideManual(){
+        
+        searchIsbnField.alpha = 1
+        searchButton.alpha = 1
+        searchIsbnLabel.alpha = 1
+        
+        titleField.hidden = true
+        authorField.hidden = true
+        isbnField.hidden = true
+        titleLabel.hidden = true
+        authorLabel.hidden = true
+        isbnLabel.hidden = true
+        pictureButton.hidden = true
+        postButton.hidden = true
     }
-
+    
+    func showManual(){
+        
+        titleField.hidden = false
+        authorField.hidden = false
+        isbnField.hidden = false
+        titleLabel.hidden = false
+        authorLabel.hidden = false
+        isbnLabel.hidden = false
+        pictureButton.hidden = false
+        postButton.hidden = false
+        
+        
+        searchIsbnField.alpha = 0
+        searchButton.alpha = 0
+        searchIsbnLabel.alpha = 0
+    }
+    
     /*
     // MARK: - Navigation
 
