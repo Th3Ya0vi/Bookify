@@ -9,28 +9,36 @@
 import UIKit
 import Parse
 import ParseUI
-
+import MBProgressHUD
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
     @IBAction func onSignin(sender: AnyObject) {
          /*** SIGN IN ***/
+        
+        let progress = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progress.labelText = "Sign-in"
+        progress.detailsLabelText = "Please wait"
+        
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!){
             (user: PFUser?, error: NSError?) -> Void in
+        
+        progress.hide(true)
             
             if user != nil {
-                print("User login")
+                print("Success: user login \(PFUser.currentUser()!.username)")
                 //here is to direct the user directly to the popular
-                self.performSegueWithIdentifier("Popular", sender: nil)
-                
-//                let vc: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("Popular")
-//                self.presentViewController(vc as! UIViewController, animated: true, completion: nil)
+                self.segueToPopular()
             }
             else{
-                print("error")
+                print("Error: user login")
                 let alertController = UIAlertController(title: "Login", message: "Error. Please try again. Check your username or password.", preferredStyle: .Alert)
                 let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
                     //print(action)
@@ -39,46 +47,23 @@ class LoginViewController: UIViewController {
                 self.presentViewController(alertController, animated: true) {
                     // ...
                 }
-                
             }
         }
          /*** SIGN IN ***/
-        
+    }
+
+    @IBAction func onSignup(sender: AnyObject) {
+        self.performSegueWithIdentifier("Signup", sender: nil)
     }
     
-    @IBAction func onSignup(sender: AnyObject) {
-         /*** SIGN UP***/
-        let new = PFUser()
-        new.username = usernameField.text
-        new.password = passwordField.text
-        new.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if success {
-                print("Yay, created a user!")
-                self.performSegueWithIdentifier("Popular", sender: nil)
-            } else {
-                print(error?.localizedDescription)
-                print("error sigup")
-                print(error?.code)
-                if error?.code == 202 {
-                    print("Username is taken")
-                    let alertUserTaken = UIAlertController(title: "Error", message: "Username is taken", preferredStyle: .Alert)
-                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                        //print(action)
-                    }
-                    alertUserTaken.addAction(okayAction)
-                    self.presentViewController(alertUserTaken, animated: true) {
-                        // ...
-                    }
-                }
-            }
-        }
-        /***SIGN UP***/
+    func segueToPopular(){
+        self.performSegueWithIdentifier("loginMenu", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

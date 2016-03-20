@@ -1,24 +1,19 @@
 //
-//  TabBarViewController.swift
+//  PostViewController.swift
 //  Bookify
 //
-//  Created by Gerardo Vazquez on 3/11/16.
+//  Created by Gerardo Vazquez on 3/20/16.
 //  Copyright © 2016 Bookify. All rights reserved.
 //
 
 import UIKit
-import FontAwesome_swift
 
-
-class TabBarViewController: UITabBarController {
+class PostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        bar![0].image = UIImage.fontAwesomeIconWithName(.Star, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
-//        bar![1].image = UIImage.fontAwesomeIconWithName(.USD, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
-//        bar![3].image = UIImage.fontAwesomeIconWithName(.User, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
-        //self.tabBarController =
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
