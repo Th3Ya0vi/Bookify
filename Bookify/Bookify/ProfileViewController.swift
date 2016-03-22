@@ -8,19 +8,31 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+//        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.User, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        let alertController = UIAlertController(title: "Profile", message: "NO PROFILE", preferredStyle: .Alert)
+//        let cancelAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+//            //print(action)
+//        }
+//        alertController.addAction(cancelAction)
+//        self.presentViewController(alertController, animated: true) {
+//            // ...
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

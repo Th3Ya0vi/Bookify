@@ -14,17 +14,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Font-Awesome-Swift-Font-Awesome-Swift.xcscheme</key>
+		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Font-Awesome-Swift.xcscheme</key>
+		<key>FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Google-Material-Design-Icons-Swift-Google-Material-Design-Icons-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Google-Material-Design-Icons-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>LGSideMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9059506BB06F7BE16783C81066F50605</key>
+		<key>6D9EDCF48A5AA1A0B1FB393CB904CF6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>744D8936F538391EE0E1CD29AC2DAC87</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6518CFFFB79D1BAD9E8358F21899ACF</key>
+		<key>D114A5CC5C953FEA6759C91DAA86139F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5103AA3B86FD939D2C77DC3043B8AC4</key>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E69B92A33BF0DA69766632232536DFFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5AACB9459C7B49B13B30174562AA3C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE30F838264970B6B786DC80D38A0077</key>
 		<dict>
 			<key>primary</key>
 			<true/>

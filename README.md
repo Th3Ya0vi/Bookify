@@ -3,7 +3,7 @@ An iOS app which connects university students (TAMU) where they can easily sell 
 
 **Bookify** is a book sharing app used to simplify buying textbooks within Texas A&M for TAMU students.
 
-Time spent: **2** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
@@ -11,8 +11,8 @@ The following **required** functionality is completed:
 
 - [x] Be able to sign in and register
 - [ ] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
-- [ ] Implement Popular, Sell, and Profile Tabs
-- [ ] Be able to post a book using the ISBN number and send it to the database as well as display in the app
+- [x] Implement Popular, Sell, and Profile Control Bar Tabs
+- [x] Be able to post a book using the ISBN number and send it to the database as well as display in the app
 - [ ] Search functionality from our own database and RESTful API
 - [ ] Users will be able to communicate using the app (via a chat mechanism)
 
@@ -32,17 +32,17 @@ The database schema consists of a no-SQL databse implementing Parse in the Herok
 
 ####User
 - [ ] username - text
-  - [ ] first name - text
-  - [ ] last name - text
+- [ ] first name - text
+- [ ] last name - text
 - [ ] username password - text
 - [ ] profile - text
-  - [ ] profile picture - file
-  - [ ] description - text
-  - [ ] classes - text
-  - [ ] wish list - text
+- [ ] profile picture - file
+- [ ] description - text
+- [ ] classes - text
+- [ ] wish list - text
 - [ ] posts - text
-  - [ ] message - text
-  - [ ] created at - time
+- [ ] message - text
+- [ ] created at - time
 - [ ] email - email
 
 ####Books
@@ -51,7 +51,7 @@ The database schema consists of a no-SQL databse implementing Parse in the Herok
 - [ ] bookcover - file
 - [ ] isbn - number
 - [ ] category - text
-  - [ ] related - text
+- [ ] related - text
 
 ## Video Walkthrough 
 

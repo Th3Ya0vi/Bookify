@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+       
         // Override point for customization after application launch.
         Parse.initializeWithConfiguration(
             ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
@@ -31,11 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
             window?.rootViewController = vc
         } else {
+            print("Current user not detected")
             let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
             window?.rootViewController = vc
         }
+        
+//        if PFUser.currentUser() != nil {
+//            print("Current user detected: \(PFUser.currentUser()!.username)")
+//        }
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+//        window?.rootViewController = vc
+        
         return true
-
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -58,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        PFUser.logOut()
     }
 
 
