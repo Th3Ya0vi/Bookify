@@ -32,7 +32,7 @@ class SignupViewController: UIViewController {
         new.password = passwordField.text
         new.email = emailField.text
         
-        if emailField.hasText() && usernameField.hasText() && passwordField.hasText(){
+        if emailField.hasText() && usernameField.hasText() && passwordField.hasText() && password2Field.hasText(){
             print("Success: form is complete")
             if passwordField.text! == password2Field.text!{
                 print("Success: passwords match")
@@ -58,7 +58,7 @@ class SignupViewController: UIViewController {
             else{
                 print("Error: password does not match")
                 progress.hide(true)
-                let alertController = UIAlertController(title: "Login", message: "Error. Please try again. Check your username or password.", preferredStyle: .Alert)
+                let alertController = UIAlertController(title: "Login", message: "Error. Passwords do not match.", preferredStyle: .Alert)
                 let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
                     //print(action)
                 }
@@ -71,7 +71,7 @@ class SignupViewController: UIViewController {
         else{
             print("Error: empty signup fields")
             progress.hide(true)
-            let alertController = UIAlertController(title: "Error", message: "Passwords do not match.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Error", message: "Please complete all fields.", preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
                 //print(action)
             }

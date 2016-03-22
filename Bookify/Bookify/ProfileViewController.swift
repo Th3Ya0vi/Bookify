@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController, UIAlertViewDelegate {
 
+    @IBAction func onLogout(sender: AnyObject) {
+        PFUser.logOut()
+        self.performSegueWithIdentifier("Login", sender: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
