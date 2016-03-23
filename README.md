@@ -21,7 +21,7 @@ The following **optional** features are implemented:
 - [ ] Be able to use the camera to detect a barcode which gets the information necessary to post a book
 - [ ] Be able to have a wishlist
 - [ ] Be able to invite friends to use the app
-- [ ] Be able to pay in advance through Venmo API (Possible optional) 
+- [ ] Be able to pay in advance  
 
 ##Wireframes
 You can view the wireframes here:
