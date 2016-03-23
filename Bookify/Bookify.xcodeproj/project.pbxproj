@@ -24,6 +24,7 @@
 		E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410B1C97886600082411 /* SignupViewController.swift */; };
 		E5EC410E1C987E2400082411 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410D1C987E2400082411 /* Post.swift */; };
 		E5EC41101C9CB65E00082411 /* GoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410F1C9CB65E00082411 /* GoogleAPI.swift */; };
+		E5F678041CA1E93C005F4EB1 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F678031CA1E93C005F4EB1 /* Courses.swift */; };
 		E5FE8FDE1C9F33C7004284C3 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */; };
 		E5FE8FE21C9F3554004284C3 /* Bookify-96.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FE8FE11C9F3554004284C3 /* Bookify-96.png */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		E5EC410B1C97886600082411 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E5EC410D1C987E2400082411 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E5EC410F1C9CB65E00082411 /* GoogleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAPI.swift; sourceTree = "<group>"; };
+		E5F678031CA1E93C005F4EB1 /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E5FE8FE11C9F3554004284C3 /* Bookify-96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bookify-96.png"; path = "../../BookifyLogo&Icons/Bookify-96.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +228,7 @@
 			children = (
 				E5EC410D1C987E2400082411 /* Post.swift */,
 				E5EC410F1C9CB65E00082411 /* GoogleAPI.swift */,
+				E5F678031CA1E93C005F4EB1 /* Courses.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				E5EC41101C9CB65E00082411 /* GoogleAPI.swift in Sources */,
 				E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */,
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
+				E5F678041CA1E93C005F4EB1 /* Courses.swift in Sources */,
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
 				E5EC410E1C987E2400082411 /* Post.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,

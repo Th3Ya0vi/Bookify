@@ -47,6 +47,10 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onManual(sender: AnyObject) {
+        self.performSegueWithIdentifier("Post", sender: nil)
+    }
+    
     @IBAction func onPicture(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self

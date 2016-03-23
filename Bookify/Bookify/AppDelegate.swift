@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = vc
         } else {
             print("Current user not detected")
-            let vc = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
+            let vc = storyboard.instantiateViewControllerWithIdentifier("Main") as UIViewController
             window?.rootViewController = vc
         }
         
