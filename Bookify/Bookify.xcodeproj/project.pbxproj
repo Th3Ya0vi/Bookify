@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */; };
 		9FA64836EE1922C25207FFBB /* Pods_Bookify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */; };
 		E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23C91C91038600A742A9 /* AppDelegate.swift */; };
 		E56A23D11C91038600A742A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A23D01C91038600A742A9 /* Assets.xcassets */; };
@@ -18,10 +19,6 @@
 		E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FC1C91087D00A742A9 /* SellViewController.swift */; };
 		E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FE1C91089800A742A9 /* ProfileViewController.swift */; };
 		E58E61521C9E0A1100B6EA04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58E61501C9E0A1100B6EA04 /* Main.storyboard */; };
-		E58E61591C9F137700B6EA04 /* iconmonstr-star-5-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E58E61581C9F137700B6EA04 /* iconmonstr-star-5-24.png */; };
-		E58E615D1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E58E615C1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png */; };
-		E58E615F1C9F154300B6EA04 /* iconmonstr-currency-2-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E58E615E1C9F154300B6EA04 /* iconmonstr-currency-2-24.png */; };
-		E58E61611C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E58E61601C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png */; };
 		E58E61651C9F234F00B6EA04 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E61641C9F234F00B6EA04 /* SearchViewController.swift */; };
 		E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */; };
 		E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EC410B1C97886600082411 /* SignupViewController.swift */; };
@@ -49,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E6F1D29D754FD565B369A19 /* Pods-Bookify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.debug.xcconfig"; sourceTree = "<group>"; };
 		C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE35003243AA0AB9726FC70B /* Pods-Bookify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,10 +66,6 @@
 		E56A23FC1C91087D00A742A9 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		E56A23FE1C91089800A742A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E58E61511C9E0A1100B6EA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E58E61581C9F137700B6EA04 /* iconmonstr-star-5-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmonstr-star-5-24.png"; path = "../../../../../Downloads/iconmonstr-star-5-24.png"; sourceTree = "<group>"; };
-		E58E615C1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmonstr-user-6-24.png"; path = "../../../../../Downloads/iconmonstr-user-6-24.png"; sourceTree = "<group>"; };
-		E58E615E1C9F154300B6EA04 /* iconmonstr-currency-2-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmonstr-currency-2-24.png"; path = "../../../../../Downloads/iconmonstr-currency-2-24.png"; sourceTree = "<group>"; };
-		E58E61601C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmonstr-banknote-15-24.png"; path = "../../../../../Downloads/iconmonstr-banknote-15-24.png"; sourceTree = "<group>"; };
 		E58E61641C9F234F00B6EA04 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E5EC410B1C97886600082411 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -191,10 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				E5FE8FE11C9F3554004284C3 /* Bookify-96.png */,
-				E58E61601C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png */,
-				E58E615E1C9F154300B6EA04 /* iconmonstr-currency-2-24.png */,
-				E58E615C1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png */,
-				E58E61581C9F137700B6EA04 /* iconmonstr-star-5-24.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -226,6 +216,7 @@
 				E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */,
 				E56A23FA1C91084E00A742A9 /* PopularViewController.swift */,
 				E56A23FE1C91089800A742A9 /* ProfileViewController.swift */,
+				176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -352,11 +343,7 @@
 				E5FE8FE21C9F3554004284C3 /* Bookify-96.png in Resources */,
 				E58E61521C9E0A1100B6EA04 /* Main.storyboard in Resources */,
 				E56A23D41C91038600A742A9 /* LaunchScreen.storyboard in Resources */,
-				E58E61611C9F154C00B6EA04 /* iconmonstr-banknote-15-24.png in Resources */,
-				E58E61591C9F137700B6EA04 /* iconmonstr-star-5-24.png in Resources */,
-				E58E615F1C9F154300B6EA04 /* iconmonstr-currency-2-24.png in Resources */,
 				E56A23D11C91038600A742A9 /* Assets.xcassets in Resources */,
-				E58E615D1C9F13FC00B6EA04 /* iconmonstr-user-6-24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +427,7 @@
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
 				E5EC410E1C987E2400082411 /* Post.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
+				176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
