@@ -11,6 +11,7 @@ import UIKit
 class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var coursePickView: UIPickerView!
+    @IBOutlet weak var titleField: UITextField!
     
     func courseValues() -> [String] {
         return ["CSCE", "ECEN"]
@@ -81,7 +82,7 @@ class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         // The parameter named row and component represents what was selected.
         
         //here we set the values to our local var before sending to parse
-        
+        titleField.text = courseValues()[getDept()] + numberValues(getDept())[getCourseNum()]
     }
     
     override func viewDidLoad() {
