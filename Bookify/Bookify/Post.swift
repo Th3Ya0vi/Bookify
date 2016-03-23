@@ -23,7 +23,7 @@ class Post: NSObject {
      */
     class func postUserBook(image: UIImage?, withTitle title: String?, withAuthor author: String?, withIsbn isbn: String?, withCompletion completion: PFBooleanResultBlock?) {
         // Create Parse object PFObject
-        let post = PFObject(className: "Post")
+        let post = PFObject(className: "Book")
         
         // Add relevant fields to the object
         post["cover"] = getPFFileFromImage(image) // PFFile column type

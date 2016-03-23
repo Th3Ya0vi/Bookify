@@ -15,6 +15,7 @@ import FontAwesome_swift
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var enterManuallyButton: UIButton!
     @IBOutlet weak var searchIsbnLabel: UILabel!
     @IBOutlet weak var searchIsbnField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -51,6 +52,10 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.performSegueWithIdentifier("Post", sender: nil)
     }
     
+    
+    @IBAction func onManually(sender: AnyObject) {
+        showManual()
+    }
     @IBAction func onPicture(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -143,6 +148,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
                 if success {
                     print("Success: posted to Parse")
+                    self.hideManual()
                     self.previewCover.image = nil
                     self.titleField.text = ""
                     self.authorField.text = ""
@@ -161,6 +167,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 }
                 else {
                     print("Error: can't post to parse")
+                    self.hideManual()
                     HUDindicator.hide(true)
                     let alertUserTaken = UIAlertController(title: "Error", message: "Please complete submission.", preferredStyle: .Alert)
                     let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
@@ -235,6 +242,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         isbnLabel.hidden = true
         pictureButton.hidden = true
         postButton.hidden = true
+        enterManuallyButton.hidden = false
     }
     
     func showManual(){
@@ -247,6 +255,8 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         isbnLabel.hidden = false
         pictureButton.hidden = false
         postButton.hidden = false
+        enterManuallyButton.hidden = true
+
         
         
         searchIsbnField.alpha = 0

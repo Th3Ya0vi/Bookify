@@ -34,7 +34,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Book")
         query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
             if let cover = cover {
                 self.books = cover
