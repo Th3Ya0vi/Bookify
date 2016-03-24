@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bookify Sign In Screen Blurred" translatesAutoresizingMaskIntoConstraints="NO" id="8Vj-db-Rqg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-Vb-CGP">
                                 <rect key="frame" x="68" y="120" width="238" height="30"/>
@@ -207,40 +207,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSh-LH-I3y">
-                                <rect key="frame" x="127" y="130" width="34" height="30"/>
+                                <rect key="frame" x="67" y="130" width="34" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-1m-Xc6">
-                                <rect key="frame" x="169" y="174" width="97" height="30"/>
+                                <rect key="frame" x="136" y="174" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHC-4y-I7w">
-                                <rect key="frame" x="109" y="174" width="52" height="30"/>
+                                <rect key="frame" x="67" y="174" width="52" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F42-jN-emz">
-                                <rect key="frame" x="169" y="222" width="97" height="30"/>
+                                <rect key="frame" x="136" y="222" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aye-gv-uEi">
-                                <rect key="frame" x="123" y="222" width="38" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zry-W6-z7u">
-                                <rect key="frame" x="169" y="130" width="97" height="30"/>
+                                <rect key="frame" x="109" y="130" width="157" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-Am-bH9">
-                                <rect key="frame" x="88" y="101" width="124" height="21"/>
+                                <rect key="frame" x="88" y="255" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -249,31 +243,37 @@
                                 <rect key="frame" x="27" y="255" width="320" height="320"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZrI-bk-3dD">
-                                <rect key="frame" x="88" y="122" width="198" height="30"/>
+                                <rect key="frame" x="88" y="276" width="198" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3H-N0-qfO">
-                                <rect key="frame" x="163" y="150" width="48" height="30"/>
+                                <rect key="frame" x="163" y="304" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="onSearch:" destination="KKe-qN-tCc" eventType="touchUpInside" id="xzb-Gx-hxW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5Q-SR-zXz">
-                                <rect key="frame" x="271" y="580" width="38" height="30"/>
-                                <state key="normal" title="HERE"/>
+                                <rect key="frame" x="237" y="580" width="107" height="30"/>
+                                <state key="normal" title="Search by ISBN"/>
                                 <connections>
                                     <action selector="onManual:" destination="KKe-qN-tCc" eventType="touchUpInside" id="iia-bC-I9D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAO-GB-lmj">
-                                <rect key="frame" x="133" y="222" width="102" height="30"/>
+                                <rect key="frame" x="136" y="374" width="102" height="30"/>
                                 <state key="normal" title="Enter Manually"/>
                                 <connections>
                                     <action selector="onManually:" destination="KKe-qN-tCc" eventType="touchUpInside" id="Oq2-KP-Ymv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aye-gv-uEi">
+                                <rect key="frame" x="67" y="225" width="38" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -298,6 +298,7 @@
                         <outlet property="authorField" destination="NMA-1m-Xc6" id="m2t-KI-3n5"/>
                         <outlet property="authorLabel" destination="zHC-4y-I7w" id="qyh-6v-M0A"/>
                         <outlet property="enterManuallyButton" destination="OAO-GB-lmj" id="aWJ-7x-TiL"/>
+                        <outlet property="exitManualButton" destination="h5Q-SR-zXz" id="ZMx-d1-PWb"/>
                         <outlet property="isbnField" destination="F42-jN-emz" id="JnR-8h-27Y"/>
                         <outlet property="isbnLabel" destination="aye-gv-uEi" id="0fq-SK-Rdz"/>
                         <outlet property="pictureButton" destination="yxE-uu-uhf" id="2P7-Re-bRj"/>
@@ -497,7 +498,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfh-Cj-BD4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfh-Cj-BD4">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="122"/>
                                                 </imageView>
                                             </subviews>
@@ -645,8 +646,8 @@
         <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gvn-Ou-xix"/>
         <segue reference="88F-Tf-zyS"/>
+        <segue reference="Gvn-Ou-xix"/>
         <segue reference="nFc-sK-aku"/>
     </inferredMetricsTieBreakers>
 </document>
