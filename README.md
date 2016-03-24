@@ -10,7 +10,7 @@ Time spent(Gerardo): **12** hours spent in total
 The following **required** functionality is completed:
 
 - [x] Be able to sign in and register
-- [ ] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
+- [x] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
 - [x] Implement Popular, Sell, and Profile Control Bar Tabs
 - [x] Be able to post a book using the ISBN number and send it to the database as well as display in the app
 - [ ] Search functionality from our own database and RESTful API
@@ -35,11 +35,10 @@ The database schema consists of a no-SQL databse implementing Parse in the Herok
 - [ ] first name - text
 - [ ] last name - text
 - [ ] username password - text
-- [ ] profile - text
-- [ ] profile picture - file
+- [ ] profile picture - file (optional)
 - [ ] description - text
-- [ ] classes - text
-- [ ] wish list - text
+- [ ] classes - text (optional)
+- [ ] wish list - text (optional)
 - [ ] posts - text
 - [ ] message - text
 - [ ] created at - time
@@ -50,13 +49,11 @@ The database schema consists of a no-SQL databse implementing Parse in the Herok
 - [ ] author - text
 - [ ] bookcover - file
 - [ ] isbn - number
-- [ ] category - text
-- [ ] related - text
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
