@@ -15,6 +15,7 @@ import FontAwesome_swift
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var exitManualButton: UIButton!
     @IBOutlet weak var enterManuallyButton: UIButton!
     @IBOutlet weak var searchIsbnLabel: UILabel!
     @IBOutlet weak var searchIsbnField: UITextField!
@@ -41,21 +42,25 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.USD, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
 
         hideManual()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        hideManual()
     }
     
     @IBAction func onManual(sender: AnyObject) {
-        self.performSegueWithIdentifier("Post", sender: nil)
+        //self.performSegueWithIdentifier("Post", sender: nil)
+        hideManual()
     }
     
     
     @IBAction func onManually(sender: AnyObject) {
         showManual()
     }
+    
     @IBAction func onPicture(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -243,6 +248,9 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pictureButton.hidden = true
         postButton.hidden = true
         enterManuallyButton.hidden = false
+        exitManualButton.hidden = true
+        previewCover.hidden = true
+
     }
     
     func showManual(){
@@ -256,6 +264,8 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pictureButton.hidden = false
         postButton.hidden = false
         enterManuallyButton.hidden = true
+        exitManualButton.hidden = false
+        previewCover.hidden = false
 
         
         
