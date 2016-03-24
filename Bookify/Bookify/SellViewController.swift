@@ -15,6 +15,7 @@ import FontAwesome_swift
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var exitManuallyButton: UIButton!
     @IBOutlet weak var enterManuallyButton: UIButton!
     @IBOutlet weak var searchIsbnLabel: UILabel!
     @IBOutlet weak var searchIsbnField: UITextField!
@@ -49,7 +50,8 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func onManual(sender: AnyObject) {
-        self.performSegueWithIdentifier("Post", sender: nil)
+        //self.performSegueWithIdentifier("Post", sender: nil)
+        hideManual()
     }
     
     
@@ -159,17 +161,21 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
                     let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
                         //print(action)
+                        self.performSegueWithIdentifier("Popular", sender: nil)
+
                     }
                     alertUserTaken.addAction(okayAction)
                     self.presentViewController(alertUserTaken, animated: true) {
                         // ...
                     }
+                    
+
                 }
                 else {
                     print("Error: can't post to parse")
                     self.hideManual()
                     HUDindicator.hide(true)
-                    let alertUserTaken = UIAlertController(title: "Error", message: "Please complete submission.", preferredStyle: .Alert)
+                    let alertUserTaken = UIAlertController(title: "Error", message: "Can't post to Bookify.", preferredStyle: .Alert)
                     let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
                         //print(action)
                     }
@@ -185,6 +191,16 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         else{
             print("Error: fields missing")
             HUDindicator.hide(true)
+            
+            let alertUserTaken = UIAlertController(title: "Error", message: "Please complete submission.", preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
+                //print(action)
+            }
+            alertUserTaken.addAction(okayAction)
+            self.presentViewController(alertUserTaken, animated: true) {
+                // ...
+            }
+
         }
     }
     
@@ -243,6 +259,9 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pictureButton.hidden = true
         postButton.hidden = true
         enterManuallyButton.hidden = false
+        exitManuallyButton.hidden = true
+        
+        previewCover.hidden = true
     }
     
     func showManual(){
@@ -256,7 +275,9 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pictureButton.hidden = false
         postButton.hidden = false
         enterManuallyButton.hidden = true
-
+        exitManuallyButton.hidden = false
+        
+        previewCover.hidden = false
         
         
         searchIsbnField.alpha = 0

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */; };
 		9FA64836EE1922C25207FFBB /* Pods_Bookify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */; };
+		E538C4CF1CA3783800D21204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E538C4CD1CA3783800D21204 /* Main.storyboard */; };
 		E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23C91C91038600A742A9 /* AppDelegate.swift */; };
 		E56A23D11C91038600A742A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56A23D01C91038600A742A9 /* Assets.xcassets */; };
 		E56A23D41C91038600A742A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56A23D21C91038600A742A9 /* LaunchScreen.storyboard */; };
@@ -18,7 +19,6 @@
 		E56A23FB1C91084E00A742A9 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FA1C91084E00A742A9 /* PopularViewController.swift */; };
 		E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FC1C91087D00A742A9 /* SellViewController.swift */; };
 		E56A23FF1C91089800A742A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23FE1C91089800A742A9 /* ProfileViewController.swift */; };
-		E58E61521C9E0A1100B6EA04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58E61501C9E0A1100B6EA04 /* Main.storyboard */; };
 		E58E61651C9F234F00B6EA04 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E61641C9F234F00B6EA04 /* SearchViewController.swift */; };
 		E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */; };
 		E5B252B11CA33F7F00263749 /* iconmonstr-banknote-15-24.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B252AE1CA33F7F00263749 /* iconmonstr-banknote-15-24.png */; };
@@ -54,6 +54,7 @@
 		4E6F1D29D754FD565B369A19 /* Pods-Bookify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.debug.xcconfig"; sourceTree = "<group>"; };
 		C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE35003243AA0AB9726FC70B /* Pods-Bookify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.release.xcconfig"; sourceTree = "<group>"; };
+		E538C4CE1CA3783800D21204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Bookify/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E56A23C61C91038600A742A9 /* Bookify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56A23C91C91038600A742A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E56A23D01C91038600A742A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		E56A23FA1C91084E00A742A9 /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		E56A23FC1C91087D00A742A9 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		E56A23FE1C91089800A742A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E58E61511C9E0A1100B6EA04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E58E61641C9F234F00B6EA04 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E5B252AE1CA33F7F00263749 /* iconmonstr-banknote-15-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmonstr-banknote-15-24.png"; path = "../../BookifyLogo&Icons/control_bar/iconmonstr-banknote-15-24.png"; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				E596C0151C93C527007AB4D3 /* Controller */,
 				E56A23F71C9105D200A742A9 /* Views */,
 				E56A23C91C91038600A742A9 /* AppDelegate.swift */,
-				E58E61501C9E0A1100B6EA04 /* Main.storyboard */,
+				E538C4CD1CA3783800D21204 /* Main.storyboard */,
 				E56A23D01C91038600A742A9 /* Assets.xcassets */,
 				E56A23D21C91038600A742A9 /* LaunchScreen.storyboard */,
 				E56A23D51C91038600A742A9 /* Info.plist */,
@@ -352,9 +352,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E538C4CF1CA3783800D21204 /* Main.storyboard in Resources */,
 				E5FE8FE21C9F3554004284C3 /* Bookify-96.png in Resources */,
 				E5B252B11CA33F7F00263749 /* iconmonstr-banknote-15-24.png in Resources */,
-				E58E61521C9E0A1100B6EA04 /* Main.storyboard in Resources */,
 				E5B252B21CA33F7F00263749 /* iconmonstr-star-5-24.png in Resources */,
 				E56A23D41C91038600A742A9 /* LaunchScreen.storyboard in Resources */,
 				E56A23D11C91038600A742A9 /* Assets.xcassets in Resources */,
@@ -479,20 +479,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E538C4CD1CA3783800D21204 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E538C4CE1CA3783800D21204 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		E56A23D21C91038600A742A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E56A23D31C91038600A742A9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E58E61501C9E0A1100B6EA04 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E58E61511C9E0A1100B6EA04 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

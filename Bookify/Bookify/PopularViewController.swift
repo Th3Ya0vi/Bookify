@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 
 class PopularViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -34,13 +35,21 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        //Show HUD before the request is made
+        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        HUDindicator.labelText = "Loading"
+        HUDindicator.detailsLabelText = "Please wait"
+        
         let query = PFQuery(className: "Book")
         query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
             if let cover = cover {
                 self.books = cover
                 self.popularBooksCollectionView.reloadData()
+                HUDindicator.hide(true)
             } else {
                 print(error?.localizedDescription)
+                HUDindicator.hide(true)
             }
         }
         
