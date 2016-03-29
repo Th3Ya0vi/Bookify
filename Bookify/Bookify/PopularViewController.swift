@@ -58,7 +58,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = popularBooksCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PopularBooksCollectionViewCell
-        cell.picture = books![indexPath.row]["cover"] as? PFFile
+        cell.picture = books?[indexPath.row]["cover"] as? PFFile
         return cell
     }
     

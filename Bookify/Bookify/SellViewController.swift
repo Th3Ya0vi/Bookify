@@ -220,19 +220,19 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let volumeInfo = items["volumeInfo"]
             
             //title
-            let title = volumeInfo!["title"] as? String
+            let title = volumeInfo?["title"] as? String
             //print ("Title \(title)")
             titleField.text = title
             
             //image
-            let imageLinks = volumeInfo!["imageLinks"]
-            let thumbnail = imageLinks!!["thumbnail"] as? String
+            let imageLinks = volumeInfo?["imageLinks"]
+            let thumbnail = imageLinks!?["thumbnail"] as? String
             //print("url \(thumbnail)")
             let imageUrl = NSURL(string: thumbnail!)
             previewCover.setImageWithURL(imageUrl!)
             
             //author
-            let authors = volumeInfo!["authors"]
+            let authors = volumeInfo?["authors"]
             authorField.text = authors!![0] as? String
             //print(authors)
             

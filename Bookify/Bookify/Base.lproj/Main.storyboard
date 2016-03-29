@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -493,7 +493,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5Gb-i1-7WG" customClass="PopularBooksCollectionViewCell" customModule="Bookify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="80" height="122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="122"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="122"/>
@@ -514,7 +514,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LYK-uX-XOB" firstAttribute="top" secondItem="OTJ-RQ-LSY" secondAttribute="bottom" id="C2j-Bh-hPs"/>
+                            <constraint firstItem="LYK-uX-XOB" firstAttribute="top" secondItem="OTJ-RQ-LSY" secondAttribute="bottom" constant="49" id="C2j-Bh-hPs"/>
                             <constraint firstItem="OTJ-RQ-LSY" firstAttribute="leading" secondItem="I3N-kK-Mr4" secondAttribute="leading" id="Np9-dR-6i2"/>
                             <constraint firstAttribute="trailing" secondItem="OTJ-RQ-LSY" secondAttribute="trailing" id="c4Y-wl-IJn"/>
                             <constraint firstItem="OTJ-RQ-LSY" firstAttribute="top" secondItem="I3N-kK-Mr4" secondAttribute="top" id="vV1-e1-sfP"/>
@@ -568,6 +568,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAk-vy-Rut" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Sell" image="iconmonstr-banknote-15-24.png" id="ZNN-zo-qIl"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQm-2c-xwy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -579,7 +580,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1H-j1-Pvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478.5" y="961.5"/>
+            <point key="canvasLocation" x="2486.5" y="961.5"/>
         </scene>
         <!--Popular-->
         <scene sceneID="jhz-bl-53w">
@@ -587,6 +588,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TBT-aL-QAl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Popular" image="iconmonstr-star-5-24.png" id="nn1-6a-tqk"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O2V-aF-D2J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -625,6 +627,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ySw-0h-F1R" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="3" title="Profile" image="iconmonstr-user-6-24.png" id="hsE-kB-rIk"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="345-gw-ntf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
