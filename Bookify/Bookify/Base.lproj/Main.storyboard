@@ -483,7 +483,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OTJ-RQ-LSY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PhI-C0-icn">
                                     <size key="itemSize" width="80" height="122"/>
@@ -511,13 +511,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-Ka-erR">
+                                <rect key="frame" x="0.0" y="58" width="375" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LYK-uX-XOB" firstAttribute="top" secondItem="OTJ-RQ-LSY" secondAttribute="bottom" constant="49" id="C2j-Bh-hPs"/>
                             <constraint firstItem="OTJ-RQ-LSY" firstAttribute="leading" secondItem="I3N-kK-Mr4" secondAttribute="leading" id="Np9-dR-6i2"/>
                             <constraint firstAttribute="trailing" secondItem="OTJ-RQ-LSY" secondAttribute="trailing" id="c4Y-wl-IJn"/>
-                            <constraint firstItem="OTJ-RQ-LSY" firstAttribute="top" secondItem="I3N-kK-Mr4" secondAttribute="top" id="vV1-e1-sfP"/>
+                            <constraint firstItem="OTJ-RQ-LSY" firstAttribute="top" secondItem="I3N-kK-Mr4" secondAttribute="top" constant="109" id="vV1-e1-sfP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g3z-iA-4zY">
@@ -532,9 +536,12 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="popularBooksCollectionView" destination="OTJ-RQ-LSY" id="sAe-a3-6oD"/>
+                        <outlet property="searchBarPlaceholder" destination="2lw-Ka-erR" id="MO1-ik-e82"/>
                         <segue destination="Q59-Ta-zvB" kind="presentation" identifier="Login" id="Gvn-Ou-xix"/>
                     </connections>
                 </viewController>

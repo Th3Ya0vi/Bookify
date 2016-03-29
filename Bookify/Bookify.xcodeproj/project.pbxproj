@@ -190,6 +190,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		E57666941CAAD4480052E90A /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				E56A23FA1C91084E00A742A9 /* PopularViewController.swift */,
+			);
+			name = Popular;
+			sourceTree = "<group>";
+		};
+		E57666951CAAD47B0052E90A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E56A23FE1C91089800A742A9 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		E58E61531C9F12EA00B6EA04 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +239,11 @@
 		E596C0151C93C527007AB4D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E57666951CAAD47B0052E90A /* Profile */,
+				E57666941CAAD4480052E90A /* Popular */,
 				E58E61631C9F232500B6EA04 /* Sell */,
 				E58E61621C9F231100B6EA04 /* Login/Register */,
 				E596C0161C93C7DB007AB4D3 /* TabBarViewController.swift */,
-				E56A23FA1C91084E00A742A9 /* PopularViewController.swift */,
-				E56A23FE1C91089800A742A9 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
