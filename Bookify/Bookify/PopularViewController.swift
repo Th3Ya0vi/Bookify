@@ -16,7 +16,9 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var popularBooksCollectionView: UICollectionView!
     
     var books: NSArray?
+    var search : NSArray?
     var searchController: UISearchController!
+    var loadOnce = true
 
     
     override func viewDidLoad() {
@@ -34,55 +36,59 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         // dimming it out wouldn't make sense.  Should set probably only set
         // this to yes if using another controller to display the search results.
         searchController.dimsBackgroundDuringPresentation = false
-        
         searchController.searchBar.sizeToFit()
-
         
         // Sets this view controller as presenting view controller for the search interface
         definesPresentationContext = true
         
-        
-        searchController.searchBar.sizeToFit()
+        //view to add search bar
         searchBarPlaceholder.addSubview(searchController.searchBar)
         automaticallyAdjustsScrollViewInsets = false
-        definesPresentationContext = true
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        //Show HUD before the request is made
-        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        HUDindicator.labelText = "Loading"
-        HUDindicator.detailsLabelText = "Please wait"
-        
-        let query = PFQuery(className: "Book")
-        query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
-            if let cover = cover {
-                self.books = cover
-                self.popularBooksCollectionView.reloadData()
-                HUDindicator.hide(true)
-            } else {
-                print(error?.localizedDescription)
-                HUDindicator.hide(true)
+        if loadOnce{
+            //Show HUD before the request is made
+            let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            HUDindicator.labelText = "Loading"
+            HUDindicator.detailsLabelText = "Please wait"
+            
+            let query = PFQuery(className: "Book")
+            query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
+                if let cover = cover {
+                    self.books = cover
+                    self.popularBooksCollectionView.reloadData()
+                    HUDindicator.hide(true)
+                } else {
+                    print(error?.localizedDescription)
+                    HUDindicator.hide(true)
+                }
             }
+            
+            //print("books are: \(books)")
+            loadOnce = false
         }
-        
-        //print("books are: \(books)")
     }
     
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
-                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
-                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
-                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
-                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
-    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            var filteredData = searchText.isEmpty ? data : data.filter({(dataString: String) -> Bool in
-                return dataString.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
-            })
-            popularBooksCollectionView.reloadData()
+
+        // construct query
+        let query = PFQuery(className: "Book")
+        query.whereKey("isbn", containsString: searchController.searchBar.text! )
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
+            if let result = result {
+                // do something with the array of object returned by the call
+                self.books = result
+                self.popularBooksCollectionView.reloadData()
+
+            } else {
+                print(error?.localizedDescription)
+            }
         }
     }
 

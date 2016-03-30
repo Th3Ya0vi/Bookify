@@ -512,7 +512,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-Ka-erR">
-                                <rect key="frame" x="0.0" y="58" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -538,6 +538,7 @@
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="popularBooksCollectionView" destination="OTJ-RQ-LSY" id="sAe-a3-6oD"/>

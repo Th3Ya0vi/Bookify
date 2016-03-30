@@ -39,8 +39,6 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.USD, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
-
         hideManual()
     }
     
@@ -54,10 +52,10 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         hideManual()
     }
     
-    
     @IBAction func onManually(sender: AnyObject) {
         showManual()
     }
+    
     @IBAction func onPicture(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -70,7 +68,6 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-            
             previewCover.image = editedImage
             dismissViewControllerAnimated(true, completion: { () -> Void in
             })

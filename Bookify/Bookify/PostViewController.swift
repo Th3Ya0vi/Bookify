@@ -13,24 +13,6 @@ class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var coursePickView: UIPickerView!
     @IBOutlet weak var titleField: UITextField!
     
-    func courseValues() -> [String] {
-        return ["CSCE", "ECEN"]
-    }
-    
-    func numberValues(withNumber: Int) -> [String] {
-        if withNumber == 0 {
-            return ["110", "111", "121", "181", "206", "221", "222", "291", "312", "313", "314", "315", "410", "411", "420", "434", "435", "436", "441", "443", "444", "462", "464", "470", "481", "482", "483", "485", "491", "604", "606", "608", "611", "614", "617", "620", "622", "624", "625", "629", "634", "635", "645", "646", "649", "655", "657", "663", "664", "665", "666", "680", "681", "684", "685", "691"]
-            
-        }
-        else if withNumber == 1{
-            return ["214", "215", "248", "285", "303", "314", "322", "325", "326", "350", "370", "403", "404", "414", "420", "438", "441", "442", "444", "447", "449", "451", "454", "455", "457", "460", "463", "464", "465", "472", "473", "474", "480", "485", "489", "491", "600", "601", "602", "604", "605", "614", "615", "620", "621", "622", "632", "635", "636", "646", "651", "654", "658", "664", "665", "675", "676", "681", "684", "685", "688", "691", "704", "710", "714", "738", "741", "742", "749", "752", "761", "762", "763", "765", "771", "772"]
-            
-        }
-        else{
-            return ["Error: out of index"]
-        }
-    }
-    
     func getDept()->Int{
         return coursePickView.selectedRowInComponent(0)
     }
@@ -51,9 +33,9 @@ class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         numberOfRowsInComponent component: Int
         ) -> Int {
             if component == 0{
-                return courseValues().count
+                return Courses.courseValues().count
             }else if component == 1{
-                return numberValues(getDept()).count
+                return Courses.numberValues(getDept()).count
             }else{
                 return 0
             }
@@ -66,10 +48,10 @@ class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         forComponent element: Int
         ) -> String? {
             if element == 0{
-                return courseValues()[row]
+                return Courses.courseValues()[row]
             }
             else if element == 1{
-                return numberValues(getDept())[row]
+                return Courses.numberValues(getDept())[row]
             }
             else{
                 return "Error"
@@ -82,7 +64,7 @@ class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         // The parameter named row and component represents what was selected.
         
         //here we set the values to our local var before sending to parse
-        titleField.text = courseValues()[getDept()] + numberValues(getDept())[getCourseNum()]
+        titleField.text = Courses.courseValues()[getDept()] + Courses.numberValues(getDept())[getCourseNum()]
     }
     
     override func viewDidLoad() {
