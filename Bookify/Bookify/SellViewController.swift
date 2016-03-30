@@ -14,6 +14,10 @@ import FontAwesome_swift
 
 class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var search: UIButton!
+    @IBAction func search(sender: AnyObject) {
+        self.performSegueWithIdentifier("Search", sender: nil)
+    }
     
     @IBOutlet weak var exitManuallyButton: UIButton!
     @IBOutlet weak var enterManuallyButton: UIButton!
@@ -40,6 +44,7 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         hideManual()
+        search.alpha = 1
     }
     
     override func didReceiveMemoryWarning() {

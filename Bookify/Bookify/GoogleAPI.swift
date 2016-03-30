@@ -16,7 +16,8 @@ class GoogleAPI: NSObject {
     var book: [NSDictionary]?
     var title : String?
     var author: String?
-    var isbn: String?
+    var isbn10: String?
+    var isbn13: String?
     var previewCover: UIImageView?
     
     
@@ -57,7 +58,6 @@ class GoogleAPI: NSObject {
     }
 
     func isValidIsbn(withIsbn isbn: String?) -> Bool {
-        self.isbn = isbn
         if isbn == isbn{
             return true
         }
@@ -86,7 +86,12 @@ class GoogleAPI: NSObject {
             //author
             let authors = volumeInfo?["authors"]
             self.author = authors!![0] as? String
-            //print(authors)
+            
+            let industryIdentifiers = volumeInfo?["industryIdentifiers"]
+            let identifier10 = industryIdentifiers![0]
+            
+            print(identifier10)
+            //self.isbn10 =
             
         }
         else{
