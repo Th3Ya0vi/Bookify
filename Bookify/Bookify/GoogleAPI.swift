@@ -59,6 +59,7 @@ class GoogleAPI: NSObject {
     }
 
     func saveIsbn(withIsbn isbn :String?){
+        //do string manilupation to delte "-" or "space" to leave just numbers
         self.isbn = isbn
     }
     

@@ -16,10 +16,14 @@ class PostViewController: UIViewController {
     @IBOutlet weak var isbnField: UITextField!
     @IBOutlet weak var classField: UITextField!
     
+    var num: String?
+    var dep: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostViewController.actOnSpecialNotification), name: "Google", object: nil)
-
+        num = course.getCourseNum()
+        dep = course.getCouseDep()
     }
     
     func actOnSpecialNotification() {

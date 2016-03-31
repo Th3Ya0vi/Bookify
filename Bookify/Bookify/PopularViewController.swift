@@ -57,7 +57,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.popularBooksCollectionView.reloadData()
                 HUDindicator.hide(true)
             } else {
-                print(error?.localizedDescription)
+                //print(error?.localizedDescription)
                 HUDindicator.hide(true)
             }
         }
@@ -87,7 +87,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.popularBooksCollectionView.reloadData()
 
             } else {
-                print(error?.localizedDescription)
+                //print(error?.localizedDescription)
             }
         }
     }

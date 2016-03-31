@@ -16,8 +16,8 @@ var course = Courses()
 class SellViewController: UIViewController, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var book: [NSDictionary]?
-    var courseVal : String?
-    var numberVal :String?
+//    var courseVal : String?
+//    var numberVal :String?
     
     @IBOutlet weak var coursePickView: UIPickerView!
     @IBOutlet weak var coursePickField: UITextField!
@@ -38,11 +38,11 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         // Dispose of any resources that can be recreated.
     }
 
-    func getDept()->Int{
-    return coursePickView.selectedRowInComponent(0)
+    func deptIndex()->Int{
+        return coursePickView.selectedRowInComponent(0)
     }
     
-    func getCourseNum()->Int{
+    func courseIndex()->Int{
         return coursePickView.selectedRowInComponent(1)
     }
     
@@ -57,11 +57,14 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         pickerView: UIPickerView,
         numberOfRowsInComponent component: Int
         ) -> Int {
-        if component == 0{
+        
+        switch component {
+            
+        case 0:
             return course.courseValues().count
-        }else if component == 1{
-            return course.numberValues(getDept()).count
-        }else{
+        case 1:
+            return course.numberValues(deptIndex()).count
+        default:
             return 0
         }
     }
@@ -70,17 +73,28 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
     func pickerView(
         pickerView: UIPickerView,
         titleForRow row: Int,
-                    forComponent element: Int
+        forComponent element: Int
         ) -> String? {
-        if element == 0{
+        
+        switch element {
+            
+        case 0:
             return course.courseValues()[row]
-        }
-        else if element == 1{
-            return course.numberValues(getDept())[row]
-        }
-        else{
+        case 1:
+            return course.numberValues(deptIndex())[row]
+        default:
             return "Error"
         }
+//        
+//        if element == 0{
+//            return course.courseValues()[row]
+//        }
+//        else if element == 1{
+//            return course.numberValues(deptIndex())[row]
+//        }
+//        else{
+//            return "Error"
+//        }
     }
     
     // Catpure the picker view selection
@@ -89,18 +103,18 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         // The parameter named row and component represents what was selected.
         
         //here we set the values to our locally
-        courseVal = course.courseValues()[getDept()]
-        numberVal = course.numberValues(getDept())[getCourseNum()]
+        let courseVal = course.courseValues()[deptIndex()]
+        let numberVal = course.numberValues(deptIndex())[courseIndex()]
         
-        //set values to current view and model
-        coursePickField.text =  courseVal! + (numberVal)!
-    }
-    
-    @IBAction func onNext(sender: AnyObject) {
         
         course.setCouseDep(withCourse: courseVal)
         course.setCouseDep(withCourse: numberVal)
         
+        //set values to current view and model
+        coursePickField.text =  courseVal + (numberVal)
+    }
+    
+    @IBAction func onNext(sender: AnyObject) {
         
         let alertController = UIAlertController(title: "Post", message: "Select option", preferredStyle: .Alert)
         
