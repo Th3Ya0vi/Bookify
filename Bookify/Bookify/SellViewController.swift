@@ -10,31 +10,17 @@ import UIKit
 import Parse
 import AFNetworking
 import MBProgressHUD
-import FontAwesome_swift
 
-class SellViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+var course = Courses()
 
-    @IBOutlet weak var search: UIButton!
-    @IBAction func search(sender: AnyObject) {
-        self.performSegueWithIdentifier("Search", sender: nil)
-    }
-    
-    @IBOutlet weak var exitManuallyButton: UIButton!
-    @IBOutlet weak var enterManuallyButton: UIButton!
-    @IBOutlet weak var searchIsbnLabel: UILabel!
-    @IBOutlet weak var searchIsbnField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var pictureButton: UIButton!
-    @IBOutlet weak var isbnLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var isbnField: UITextField!
-    @IBOutlet weak var authorField: UITextField!
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var previewCover: UIImageView!
-    @IBOutlet weak var postButton: UIButton!
-    
+class SellViewController: UIViewController, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+
     var book: [NSDictionary]?
+    var courseVal : String?
+    var numberVal :String?
+    
+    @IBOutlet weak var coursePickView: UIPickerView!
+    @IBOutlet weak var coursePickField: UITextField!
     
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
@@ -43,250 +29,105 @@ class SellViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        hideManual()
-        search.alpha = 1
+        coursePickView.delegate = self
+        coursePickView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onManual(sender: AnyObject) {
-        //self.performSegueWithIdentifier("Post", sender: nil)
-        hideManual()
-    }
-    
-    @IBAction func onManually(sender: AnyObject) {
-        showManual()
-    }
-    
-    @IBAction func onPicture(sender: AnyObject) {
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(vc, animated: true, completion: nil)
 
+    func getDept()->Int{
+    return coursePickView.selectedRowInComponent(0)
     }
     
-    func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-            let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-            previewCover.image = editedImage
-            dismissViewControllerAnimated(true, completion: { () -> Void in
-            })
+    func getCourseNum()->Int{
+        return coursePickView.selectedRowInComponent(1)
     }
     
-    func resize(image: UIImage, newSize: CGSize) -> UIImage {
-        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        resizeImageView.image = image
+    //number of scrolling picks
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 2
         
-        UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
     }
     
-    @IBAction func onSearch(sender: AnyObject) {
-        
-        if isValidIsbn(){
-            //Show HUD before the request is made
-            let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            HUDindicator.labelText = "Loading Book"
-            HUDindicator.detailsLabelText = "Please wait"
-            
-            let base = "https://www.googleapis.com/books/v1/volumes?q=+isbn:"
-            let apiKey = "&key=AIzaSyC6LLlunLukIkI7iElDZZdXA4rQqqcMugo"
-            let isbn = searchIsbnField.text!
-            let googleAPI = "\(base)\(isbn)\(apiKey)"
-            
-            let url = NSURL(string: googleAPI)
-            let request = NSURLRequest(
-                URL: url!,
-                cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
-                timeoutInterval: 10)
-            
-            let session = NSURLSession(
-                configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-                delegate: nil,
-                delegateQueue: NSOperationQueue.mainQueue()
-            )
-            
-            let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
-                completionHandler: { (dataOrNil, response, error) in
-                    if let data = dataOrNil {
-                        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                            data, options:[]) as? NSDictionary {
-                                //print("response: \(responseDictionary)")
-                                //Hide HUD after request is done
-                                //HUDindicator.hide(true)
-                                
-                                self.book = responseDictionary["items"] as? [NSDictionary]
-                                //self.tableView.reloadData()
-                                //print(self.book)
-                                
-                                self.parseDictionary()
-                                HUDindicator.hide(true)
-                        }
-                    }
-            })
-            task.resume()
+    //number of course numbers for selected department
+    func pickerView(
+        pickerView: UIPickerView,
+        numberOfRowsInComponent component: Int
+        ) -> Int {
+        if component == 0{
+            return course.courseValues().count
+        }else if component == 1{
+            return course.numberValues(getDept()).count
+        }else{
+            return 0
+        }
+    }
+    
+    //[[String]] returns string for each label using matrix
+    func pickerView(
+        pickerView: UIPickerView,
+        titleForRow row: Int,
+                    forComponent element: Int
+        ) -> String? {
+        if element == 0{
+            return course.courseValues()[row]
+        }
+        else if element == 1{
+            return course.numberValues(getDept())[row]
         }
         else{
-            print("Error: Not a valid ISBN")
-        }
-        showManual()
-    }
-    
-    @IBAction func onPost(sender: AnyObject) {
-        
-        //Show HUD before the request is made
-        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        HUDindicator.labelText = "Posting"
-        HUDindicator.detailsLabelText = "Please wait"
-        
-        if previewCover.image != nil && titleField.hasText() && authorField.hasText() && isbnField.hasText(){
-            Post.postUserBook(previewCover.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn: isbnField.text) { (success: Bool, error:NSError?) -> Void in
-                if success {
-                    print("Success: posted to Parse")
-                    self.hideManual()
-                    self.previewCover.image = nil
-                    self.titleField.text = ""
-                    self.authorField.text = ""
-                    self.isbnField.text = ""
-                    
-                    HUDindicator.hide(true)
-                    
-                    let alertUserTaken = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .Alert)
-                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                        //print(action)
-                        self.performSegueWithIdentifier("Popular", sender: nil)
-
-                    }
-                    alertUserTaken.addAction(okayAction)
-                    self.presentViewController(alertUserTaken, animated: true) {
-                        // ...
-                    }
-                    
-
-                }
-                else {
-                    print("Error: can't post to parse")
-                    self.hideManual()
-                    HUDindicator.hide(true)
-                    let alertUserTaken = UIAlertController(title: "Error", message: "Can't post to Bookify.", preferredStyle: .Alert)
-                    let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                        //print(action)
-                    }
-                    alertUserTaken.addAction(okayAction)
-                    self.presentViewController(alertUserTaken, animated: true) {
-                        // ...
-                    }
-
-                }
-            }
-
-        }
-        else{
-            print("Error: fields missing")
-            HUDindicator.hide(true)
-            
-            let alertUserTaken = UIAlertController(title: "Error", message: "Please complete submission.", preferredStyle: .Alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-                //print(action)
-            }
-            alertUserTaken.addAction(okayAction)
-            self.presentViewController(alertUserTaken, animated: true) {
-                // ...
-            }
-
+            return "Error"
         }
     }
     
-    func isValidIsbn() -> Bool{
-        if searchIsbnField.hasText(){
-            //let isbn = searchIsbnField.text! as String
-            return true
-        }
-        else{
-            return false
-        }
+    // Catpure the picker view selection
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        
+        //here we set the values to our locally
+        courseVal = course.courseValues()[getDept()]
+        numberVal = course.numberValues(getDept())[getCourseNum()]
+        
+        //set values to current view and model
+        coursePickField.text =  courseVal! + (numberVal)!
     }
     
-    func parseDictionary(){
-        if self.book != nil{
-            let items = book![0]
-            let volumeInfo = items["volumeInfo"]
-            
-            //title
-            let title = volumeInfo?["title"] as? String
-            //print ("Title \(title)")
-            titleField.text = title
-            
-            //image
-            let imageLinks = volumeInfo?["imageLinks"]
-            let thumbnail = imageLinks!?["thumbnail"] as? String
-            //print("url \(thumbnail)")
-            let imageUrl = NSURL(string: thumbnail!)
-            previewCover.setImageWithURL(imageUrl!)
-            
-            //author
-            let authors = volumeInfo?["authors"]
-            authorField.text = authors!![0] as? String
-            //print(authors)
-            
-            //isbn
-            isbnField.text = searchIsbnField.text
+    @IBAction func onNext(sender: AnyObject) {
+        
+        course.setCouseDep(withCourse: courseVal)
+        course.setCouseDep(withCourse: numberVal)
+        
+        
+        let alertController = UIAlertController(title: "Post", message: "Select option", preferredStyle: .Alert)
+        
+        let manualAction = UIAlertAction(title: "Manually", style: .Default) { (action) in
+            //action when clicked
+            self.performSegueWithIdentifier("Post", sender: nil)
         }
-        else{
-            print("Error: no book")
+        let autoAction = UIAlertAction(title: "ISBN", style: .Default) { (action) in
+            //action when clicked
+            self.performSegueWithIdentifier("Search", sender: nil)
         }
-    }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action) in
+            //print(action)
+        }
+        
+        alertController.addAction(manualAction)
+        alertController.addAction(autoAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
 
-    func hideManual(){
         
-        searchIsbnField.alpha = 1
-        searchButton.alpha = 1
-        searchIsbnLabel.alpha = 1
-        
-        titleField.hidden = true
-        authorField.hidden = true
-        isbnField.hidden = true
-        titleLabel.hidden = true
-        authorLabel.hidden = true
-        isbnLabel.hidden = true
-        pictureButton.hidden = true
-        postButton.hidden = true
-        enterManuallyButton.hidden = false
-        exitManuallyButton.hidden = true
-        
-        previewCover.hidden = true
     }
     
-    func showManual(){
-        
-        titleField.hidden = false
-        authorField.hidden = false
-        isbnField.hidden = false
-        titleLabel.hidden = false
-        authorLabel.hidden = false
-        isbnLabel.hidden = false
-        pictureButton.hidden = false
-        postButton.hidden = false
-        enterManuallyButton.hidden = true
-        exitManuallyButton.hidden = false
-        
-        previewCover.hidden = false
-        
-        
-        searchIsbnField.alpha = 0
-        searchButton.alpha = 0
-        searchIsbnLabel.alpha = 0
-    }
-    
+
     /*
     // MARK: - Navigation
 

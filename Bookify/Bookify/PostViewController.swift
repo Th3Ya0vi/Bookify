@@ -7,70 +7,33 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class PostViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
-    @IBOutlet weak var coursePickView: UIPickerView!
+class PostViewController: UIViewController {
+    
     @IBOutlet weak var titleField: UITextField!
-    
-    func getDept()->Int{
-        return coursePickView.selectedRowInComponent(0)
-    }
-    
-    func getCourseNum()->Int{
-        return coursePickView.selectedRowInComponent(1)
-    }
-    
-    //number of scrolling picks
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 2
-        
-    }
-    
-    //number of course numbers for selected department
-    func pickerView(
-        pickerView: UIPickerView,
-        numberOfRowsInComponent component: Int
-        ) -> Int {
-            if component == 0{
-                return Courses.courseValues().count
-            }else if component == 1{
-                return Courses.numberValues(getDept()).count
-            }else{
-                return 0
-            }
-    }
-    
-    //[[String]] returns string for each label using matrix
-    func pickerView(
-        pickerView: UIPickerView,
-        titleForRow row: Int,
-        forComponent element: Int
-        ) -> String? {
-            if element == 0{
-                return Courses.courseValues()[row]
-            }
-            else if element == 1{
-                return Courses.numberValues(getDept())[row]
-            }
-            else{
-                return "Error"
-            }
-    }
-    
-    // Catpure the picker view selection
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        
-        //here we set the values to our local var before sending to parse
-        titleField.text = Courses.courseValues()[getDept()] + Courses.numberValues(getDept())[getCourseNum()]
-    }
+    @IBOutlet weak var authorField: UITextField!
+    @IBOutlet weak var isbnField: UITextField!
+    @IBOutlet weak var classField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coursePickView.delegate = self
-        coursePickView.dataSource = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostViewController.actOnSpecialNotification), name: "Google", object: nil)
+
+    }
+    
+    func actOnSpecialNotification() {
+        titleField.text = google.title
+        authorField.text = google.author
+        isbnField.text = google.isbn10
+        classField.text = "CSCE"
+        print(course.getCouseDep())
+        print(course.getCourseNum())
+        print("Succes: notification")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {

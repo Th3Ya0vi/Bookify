@@ -229,8 +229,8 @@
 		E58E61631C9F232500B6EA04 /* Sell */ = {
 			isa = PBXGroup;
 			children = (
-				E56A23FC1C91087D00A742A9 /* SellViewController.swift */,
 				E58E61641C9F234F00B6EA04 /* SearchViewController.swift */,
+				E56A23FC1C91087D00A742A9 /* SellViewController.swift */,
 				E5FE8FDD1C9F33C7004284C3 /* PostViewController.swift */,
 			);
 			name = Sell;

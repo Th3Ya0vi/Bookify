@@ -19,20 +19,22 @@ class GoogleAPI: NSObject {
     var isbn10: String?
     var isbn13: String?
     var previewCover: UIImageView?
+    var imageUrl = NSURL()
+    var isbn : String!
     
-    
-    func onSearch(withIsbn isbn: String?) {
-
+    func onSearch() {
+        
         let base = "https://www.googleapis.com/books/v1/volumes?q=+isbn:"
         let apiKey = "&key=AIzaSyC6LLlunLukIkI7iElDZZdXA4rQqqcMugo"
-        //let isbn = "000"
         let googleAPI = "\(base)\(isbn)\(apiKey)"
+        
+        //print(googleAPI)
         
         let url = NSURL(string: googleAPI)
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
-            timeoutInterval: 10)
+            timeoutInterval: 5)
         
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -45,18 +47,21 @@ class GoogleAPI: NSObject {
             if let data = dataOrNil {
                 if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                     data, options:[]) as? NSDictionary {
-                    print("response: \(responseDictionary)")
+                    //print("response: \(responseDictionary)")
                    
                     self.book = responseDictionary["items"] as? [NSDictionary]
-                    //print(self.book)
-                    //self.parseDictionary()
+                    print(self.book)
+                    self.parseDictionary()
                 }
             }
         })
         task.resume()
-        
     }
 
+    func saveIsbn(withIsbn isbn :String?){
+        self.isbn = isbn
+    }
+    
     func isValidIsbn(withIsbn isbn: String?) -> Bool {
         if isbn == isbn{
             return true
@@ -80,23 +85,34 @@ class GoogleAPI: NSObject {
             let imageLinks = volumeInfo?["imageLinks"]
             let thumbnail = imageLinks!?["thumbnail"] as? String
             //print("url \(thumbnail)")
-            let imageUrl = NSURL(string: thumbnail!)
-            self.previewCover!.setImageWithURL(imageUrl!)
+            self.imageUrl = NSURL(string: thumbnail!)!
+            //self.previewCover!.setImageWithURL(imageUrl!)
             
             //author
             let authors = volumeInfo?["authors"]
             self.author = authors!![0] as? String
             
+            //isbn
             let industryIdentifiers = volumeInfo?["industryIdentifiers"]
-            let identifier10 = industryIdentifiers![0]
+            //isbn10
+            let identifier10 = industryIdentifiers![0] as! NSDictionary
+            self.isbn10 = identifier10["identifier"] as? String
+            //isbn13
+            let identifier13 = industryIdentifiers![1] as! NSDictionary
+            self.isbn13 = identifier13["identifier"] as? String
             
-            print(identifier10)
-            //self.isbn10 =
+            print(author)
+            print(isbn10)
+            print(self.title)
             
+            NSNotificationCenter.defaultCenter().postNotificationName("Google", object: nil)
+
         }
         else{
             print("Error: no book")
         }
     }
+    
+    
     
 }

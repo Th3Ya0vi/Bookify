@@ -44,32 +44,32 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         //view to add search bar
         searchBarPlaceholder.addSubview(searchController.searchBar)
         automaticallyAdjustsScrollViewInsets = false
+        
+        //Show HUD before the request is made
+        let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        HUDindicator.labelText = "Loading"
+        HUDindicator.detailsLabelText = "Please wait"
+        
+        let query = PFQuery(className: "Book")
+        query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
+            if let cover = cover {
+                self.books = cover
+                self.popularBooksCollectionView.reloadData()
+                HUDindicator.hide(true)
+            } else {
+                print(error?.localizedDescription)
+                HUDindicator.hide(true)
+            }
+        }
+        
+        //print("books are: \(books)")
+        loadOnce = false
+
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if loadOnce{
-            //Show HUD before the request is made
-            let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            HUDindicator.labelText = "Loading"
-            HUDindicator.detailsLabelText = "Please wait"
-            
-            let query = PFQuery(className: "Book")
-            query.findObjectsInBackgroundWithBlock { (cover: [PFObject]?, error: NSError?) -> Void in
-                if let cover = cover {
-                    self.books = cover
-                    self.popularBooksCollectionView.reloadData()
-                    HUDindicator.hide(true)
-                } else {
-                    print(error?.localizedDescription)
-                    HUDindicator.hide(true)
-                }
-            }
-            
-            //print("books are: \(books)")
-            loadOnce = false
-        }
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
