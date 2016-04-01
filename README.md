@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [x] Implement home screen, which consists of a table view as well as a collection view to display multiple categories of books
 - [x] Implement Popular, Sell, and Profile Control Bar Tabs
 - [x] Be able to post a book using the ISBN number and send it to the database as well as display in the app
-- [ ] Search functionality from our own database and RESTful API
+- [x] Search functionality from our own database and RESTful API
 - [ ] Users will be able to communicate using the app (via a chat mechanism)
 
 The following **optional** features are implemented:
