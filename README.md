@@ -54,6 +54,6 @@ The database schema consists of a no-SQL databse implementing Parse in the Herok
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animation.gif' title='Video Walkthrough Sprint 1' width='' alt='Video Walkthrough' />
+<img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animationv2.gif' title='Video Walkthrough Sprint 2' width='' alt='Video Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
