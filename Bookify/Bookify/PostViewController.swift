@@ -9,32 +9,30 @@
 import UIKit
 import MBProgressHUD
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var authorField: UITextField!
     @IBOutlet weak var isbnField: UITextField!
-    @IBOutlet weak var classField: UITextField!
+    @IBOutlet weak var coverImage: UIImageView!
     
-    var num: String?
-    var dep: String?
+    var withClass: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostViewController.actOnSpecialNotification), name: "Google", object: nil)
-        num = course.getCourseNum()
-        dep = course.getCouseDep()
     }
     
     func actOnSpecialNotification() {
         titleField.text = google.title
         authorField.text = google.author
         isbnField.text = google.isbn10
-        classField.text = "CSCE"
-        print(course.getCouseDep())
-        print(course.getCourseNum())
+        coverImage.setImageWithURL(google.imageUrl)
+        
         print("Succes: notification")
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         
@@ -43,6 +41,45 @@ class PostViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onPost(sender: AnyObject) {
+        
+        withClass = course.course! + course.number!
+        
+        Post.postUserBook(coverImage.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn10: google.isbn10, withIsbn13: google.isbn13, withClass: withClass) { (good:Bool, error:NSError?) in
+            if good{
+                print("Success: posted to Parse")
+                self.coverImage.image = nil
+                self.titleField.text = ""
+                self.authorField.text = ""
+                self.isbnField.text = ""
+                
+                self.performSegueWithIdentifier("Menu", sender: nil)
+                
+            }
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        coverImage.image = editedImage
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+        })
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
     
     /*

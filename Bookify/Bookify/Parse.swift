@@ -21,7 +21,7 @@ class Post: NSObject {
      - parameter caption: Caption text input by the user
      - parameter completion: Block to be executed after save operation is complete
      */
-    class func postUserBook(image: UIImage?, withTitle title: String?, withAuthor author: String?, withIsbn10 isbn10: String?, withIsbn13 isbn13: String?, withClass name: String?,withCompletion completion: PFBooleanResultBlock?) {
+    class func postUserBook(image: UIImage?, withTitle title: String?, withAuthor author: String?, withIsbn10 isbn10: String?, withIsbn13 isbn13: String?, withClass name: String?, withCompletion completion: PFBooleanResultBlock?) -> Void {
         
         // Create Parse object PFObject
         let post = PFObject(className: "Book")

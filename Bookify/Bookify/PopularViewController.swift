@@ -18,8 +18,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     var books: NSArray?
     var search : NSArray?
     var searchController: UISearchController!
-    var loadOnce = true
-
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +44,11 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         searchBarPlaceholder.addSubview(searchController.searchBar)
         automaticallyAdjustsScrollViewInsets = false
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         //Show HUD before the request is made
         let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         HUDindicator.labelText = "Loading"
@@ -63,12 +67,6 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         }
         
         //print("books are: \(books)")
-        loadOnce = false
-
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
     }
     
@@ -76,7 +74,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
 
         // construct query
         let query = PFQuery(className: "Book")
-        query.whereKey("isbn", containsString: searchController.searchBar.text! )
+        query.whereKey("title", containsString: searchController.searchBar.text! )
         query.limit = 20
         
         // fetch data asynchronously

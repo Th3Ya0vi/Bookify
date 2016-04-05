@@ -35,7 +35,6 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func deptIndex()->Int{
@@ -46,13 +45,12 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         return coursePickView.selectedRowInComponent(1)
     }
     
-    //number of scrolling picks
+    //number of scrolling picks or columns
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
-        
     }
     
-    //number of course numbers for selected department
+    //number of elements in column
     func pickerView(
         pickerView: UIPickerView,
         numberOfRowsInComponent component: Int
@@ -85,16 +83,7 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         default:
             return "Error"
         }
-//        
-//        if element == 0{
-//            return course.courseValues()[row]
-//        }
-//        else if element == 1{
-//            return course.numberValues(deptIndex())[row]
-//        }
-//        else{
-//            return "Error"
-//        }
+
     }
     
     // Catpure the picker view selection
@@ -106,15 +95,19 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
         let courseVal = course.courseValues()[deptIndex()]
         let numberVal = course.numberValues(deptIndex())[courseIndex()]
         
-        
         course.setCouseDep(withCourse: courseVal)
         course.setCouseDep(withCourse: numberVal)
         
         //set values to current view and model
         coursePickField.text =  courseVal + (numberVal)
+        
+        
     }
     
     @IBAction func onNext(sender: AnyObject) {
+        
+        course.course = course.courseValues()[deptIndex()]
+        course.number = course.numberValues(deptIndex())[courseIndex()]
         
         let alertController = UIAlertController(title: "Post", message: "Select option", preferredStyle: .Alert)
         
@@ -130,8 +123,8 @@ class SellViewController: UIViewController, UINavigationControllerDelegate, UIPi
             //print(action)
         }
         
-        alertController.addAction(manualAction)
         alertController.addAction(autoAction)
+        alertController.addAction(manualAction)
         alertController.addAction(cancelAction)
         
         self.presentViewController(alertController, animated: true) {

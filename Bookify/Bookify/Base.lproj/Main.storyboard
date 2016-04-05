@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -339,26 +339,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-IE-h2u">
-                                <rect key="frame" x="92" y="209" width="263" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hl-D1-uSG">
-                                <rect key="frame" x="23" y="209" width="42" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ii-su-fiu">
+                                <rect key="frame" x="123" y="286" width="128" height="183"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vsL-CO-GrV">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="fL3-0T-SJN">
+                            <connections>
+                                <action selector="onPost:" destination="llj-yc-O8h" id="PP2-dW-rF2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="authorField" destination="qfr-Zd-GoQ" id="8fo-ft-yB3"/>
-                        <outlet property="classField" destination="bhT-IE-h2u" id="6Ae-f1-Wbf"/>
+                        <outlet property="coverImage" destination="4ii-su-fiu" id="8gp-m3-yVr"/>
                         <outlet property="isbnField" destination="oPo-d3-eft" id="pn3-Zf-RHI"/>
                         <outlet property="titleField" destination="wk0-3s-HS4" id="DS9-50-1SI"/>
+                        <segue destination="bsA-xt-5jZ" kind="presentation" identifier="Menu" id="fNk-HP-Hd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpH-5J-aQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,8 +587,8 @@
         <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NEJ-my-iZ4"/>
-        <segue reference="Gvn-Ou-xix"/>
+        <segue reference="fNk-HP-Hd4"/>
         <segue reference="JZl-dM-gpC"/>
+        <segue reference="Gvn-Ou-xix"/>
     </inferredMetricsTieBreakers>
 </document>
