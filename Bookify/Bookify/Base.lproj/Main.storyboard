@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -199,77 +199,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-uu-uhf">
-                                <rect key="frame" x="139" y="400" width="96" height="30"/>
-                                <state key="normal" title="Select Picture"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-u9-62u">
+                                <rect key="frame" x="0.0" y="178" width="375" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVZ-9X-zeO">
+                                <rect key="frame" x="171" y="531" width="32" height="28"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="onPicture:" destination="KKe-qN-tCc" eventType="touchUpInside" id="sOi-Rj-EdA"/>
+                                    <action selector="onNext:" destination="KKe-qN-tCc" eventType="touchUpInside" id="RLy-o0-a09"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSh-LH-I3y">
-                                <rect key="frame" x="59" y="125" width="34" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hki-kU-JtP">
+                                <rect key="frame" x="139" y="493" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You selected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-W3-UEL">
+                                <rect key="frame" x="136" y="464" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-1m-Xc6">
-                                <rect key="frame" x="139" y="174" width="158" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHC-4y-I7w">
-                                <rect key="frame" x="59" y="174" width="52" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F42-jN-emz">
-                                <rect key="frame" x="139" y="222" width="158" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zry-W6-z7u">
-                                <rect key="frame" x="139" y="130" width="158" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search by ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-Am-bH9">
-                                <rect key="frame" x="88" y="279" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-Wb-Htb">
-                                <rect key="frame" x="27" y="255" width="320" height="320"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZrI-bk-3dD">
-                                <rect key="frame" x="88" y="300" width="198" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3H-N0-qfO">
-                                <rect key="frame" x="163" y="328" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="onSearch:" destination="KKe-qN-tCc" eventType="touchUpInside" id="xzb-Gx-hxW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5Q-SR-zXz">
-                                <rect key="frame" x="237" y="580" width="107" height="30"/>
-                                <state key="normal" title="Search by ISBN"/>
-                                <connections>
-                                    <action selector="onManual:" destination="KKe-qN-tCc" eventType="touchUpInside" id="iia-bC-I9D"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAO-GB-lmj">
-                                <rect key="frame" x="136" y="212" width="102" height="30"/>
-                                <state key="normal" title="Enter Manually"/>
-                                <connections>
-                                    <action selector="onManually:" destination="KKe-qN-tCc" eventType="touchUpInside" id="Oq2-KP-Ymv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aye-gv-uEi">
-                                <rect key="frame" x="59" y="222" width="38" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsW-Eq-9yP">
+                                <rect key="frame" x="140" y="149" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -281,37 +233,13 @@
                             <outletCollection property="gestureRecognizers" destination="625-XE-z71" appends="YES" id="Swy-8e-lXc"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="VC1-Y8-xKd">
-                        <barButtonItem key="rightBarButtonItem" id="WWQ-V1-L8c">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ecQ-Vb-iY6">
-                                <rect key="frame" x="328" y="7" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Post"/>
-                                <connections>
-                                    <action selector="onPost:" destination="KKe-qN-tCc" eventType="touchUpInside" id="V8a-mT-8WV"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VC1-Y8-xKd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="authorField" destination="NMA-1m-Xc6" id="m2t-KI-3n5"/>
-                        <outlet property="authorLabel" destination="zHC-4y-I7w" id="qyh-6v-M0A"/>
-                        <outlet property="enterManuallyButton" destination="OAO-GB-lmj" id="aWJ-7x-TiL"/>
-                        <outlet property="exitManuallyButton" destination="h5Q-SR-zXz" id="cqI-9T-CDc"/>
-                        <outlet property="isbnField" destination="F42-jN-emz" id="JnR-8h-27Y"/>
-                        <outlet property="isbnLabel" destination="aye-gv-uEi" id="0fq-SK-Rdz"/>
-                        <outlet property="pictureButton" destination="yxE-uu-uhf" id="2P7-Re-bRj"/>
-                        <outlet property="postButton" destination="ecQ-Vb-iY6" id="n2r-ND-XOw"/>
-                        <outlet property="previewCover" destination="Ytp-Wb-Htb" id="wT8-Pt-cLh"/>
-                        <outlet property="searchButton" destination="v3H-N0-qfO" id="ZDc-Xe-xPu"/>
-                        <outlet property="searchIsbnField" destination="ZrI-bk-3dD" id="3S6-L1-NVT"/>
-                        <outlet property="searchIsbnLabel" destination="ZUb-Am-bH9" id="mcX-Z4-UBP"/>
-                        <outlet property="titleField" destination="zry-W6-z7u" id="xeb-IO-8LT"/>
-                        <outlet property="titleLabel" destination="sSh-LH-I3y" id="xyc-sM-DWb"/>
-                        <segue destination="UWA-1N-40K" kind="presentation" identifier="Search" id="b2e-U7-37O"/>
-                        <segue destination="llj-yc-O8h" kind="show" identifier="Post" id="nFc-sK-aku"/>
-                        <segue destination="bsA-xt-5jZ" kind="show" identifier="Popular" id="h07-Z7-DUO"/>
+                        <outlet property="coursePickField" destination="hki-kU-JtP" id="OXc-tR-S5M"/>
+                        <outlet property="coursePickView" destination="X7T-u9-62u" id="NSd-2Z-NmO"/>
+                        <segue destination="UWA-1N-40K" kind="show" identifier="Search" id="4fJ-qm-BxL"/>
+                        <segue destination="llj-yc-O8h" kind="show" identifier="Post" id="7oy-fJ-LZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwJ-Vp-GNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,24 +269,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6e-cH-uRv">
+                                <rect key="frame" x="163" y="215" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="onSearch:" destination="UWA-1N-40K" eventType="touchUpInside" id="Lmr-JT-TXA"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lru-U8-SUe">
                                 <rect key="frame" x="88" y="187" width="198" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6e-cH-uRv">
-                                <rect key="frame" x="163" y="215" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="onSearch:" destination="KKe-qN-tCc" eventType="touchUpInside" id="F5F-Pe-O0B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="llj-yc-O8h" kind="show" identifier="Post" id="XJF-3F-Raf"/>
+                        <outlet property="searchField" destination="Lru-U8-SUe" id="fIU-cP-p1m"/>
+                        <segue destination="llj-yc-O8h" kind="show" identifier="Post" id="JZl-dM-gpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PB-Gz-b2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,37 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw1-lA-obE">
-                                <rect key="frame" x="139" y="534" width="96" height="30"/>
-                                <state key="normal" title="Select Picture"/>
-                                <connections>
-                                    <action selector="onPicture:" destination="KKe-qN-tCc" eventType="touchUpInside" id="mOv-yq-ekC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-uM-nfg">
                                 <rect key="frame" x="27" y="95" width="34" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfr-Zd-GoQ">
-                                <rect key="frame" x="92" y="133" width="263" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-ef-zjZ">
-                                <rect key="frame" x="27" y="133" width="52" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-d3-eft">
-                                <rect key="frame" x="92" y="171" width="263" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3P-iz-EM8">
-                                <rect key="frame" x="27" y="171" width="38" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -417,24 +317,53 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nO4-59-gLm">
-                                <rect key="frame" x="20" y="519" width="335" height="154"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-ef-zjZ">
+                                <rect key="frame" x="27" y="133" width="52" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfr-Zd-GoQ">
+                                <rect key="frame" x="92" y="133" width="263" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3P-iz-EM8">
+                                <rect key="frame" x="27" y="171" width="38" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-d3-eft">
+                                <rect key="frame" x="92" y="171" width="263" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ii-su-fiu">
+                                <rect key="frame" x="123" y="286" width="128" height="183"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-54-iVN">
-                                <rect key="frame" x="27" y="239" width="328" height="174"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vsL-CO-GrV">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="fL3-0T-SJN">
+                            <connections>
+                                <action selector="onPost:" destination="llj-yc-O8h" id="PP2-dW-rF2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="coursePickView" destination="mZL-54-iVN" id="PJj-8U-cTV"/>
-                        <outlet property="titleField" destination="wk0-3s-HS4" id="RXj-4w-O57"/>
+                        <outlet property="authorField" destination="qfr-Zd-GoQ" id="8fo-ft-yB3"/>
+                        <outlet property="coverImage" destination="4ii-su-fiu" id="8gp-m3-yVr"/>
+                        <outlet property="isbnField" destination="oPo-d3-eft" id="pn3-Zf-RHI"/>
+                        <outlet property="titleField" destination="wk0-3s-HS4" id="DS9-50-1SI"/>
+                        <segue destination="bsA-xt-5jZ" kind="presentation" identifier="Menu" id="fNk-HP-Hd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpH-5J-aQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3496.5" y="1488.5"/>
+            <point key="canvasLocation" x="3496.5" y="1502.5"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="IgP-Qv-9mu">
@@ -483,7 +412,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OTJ-RQ-LSY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PhI-C0-icn">
                                     <size key="itemSize" width="80" height="122"/>
@@ -511,13 +440,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-Ka-erR">
+                                <rect key="frame" x="0.0" y="68" width="375" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LYK-uX-XOB" firstAttribute="top" secondItem="OTJ-RQ-LSY" secondAttribute="bottom" constant="49" id="C2j-Bh-hPs"/>
                             <constraint firstItem="OTJ-RQ-LSY" firstAttribute="leading" secondItem="I3N-kK-Mr4" secondAttribute="leading" id="Np9-dR-6i2"/>
                             <constraint firstAttribute="trailing" secondItem="OTJ-RQ-LSY" secondAttribute="trailing" id="c4Y-wl-IJn"/>
-                            <constraint firstItem="OTJ-RQ-LSY" firstAttribute="top" secondItem="I3N-kK-Mr4" secondAttribute="top" id="vV1-e1-sfP"/>
+                            <constraint firstItem="OTJ-RQ-LSY" firstAttribute="top" secondItem="I3N-kK-Mr4" secondAttribute="top" constant="109" id="vV1-e1-sfP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g3z-iA-4zY">
@@ -532,9 +465,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="popularBooksCollectionView" destination="OTJ-RQ-LSY" id="sAe-a3-6oD"/>
+                        <outlet property="searchBarPlaceholder" destination="2lw-Ka-erR" id="MO1-ik-e82"/>
                         <segue destination="Q59-Ta-zvB" kind="presentation" identifier="Login" id="Gvn-Ou-xix"/>
                     </connections>
                 </viewController>
@@ -650,8 +587,8 @@
         <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h07-Z7-DUO"/>
-        <segue reference="nFc-sK-aku"/>
+        <segue reference="fNk-HP-Hd4"/>
+        <segue reference="JZl-dM-gpC"/>
         <segue reference="Gvn-Ou-xix"/>
     </inferredMetricsTieBreakers>
 </document>

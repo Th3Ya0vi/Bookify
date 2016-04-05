@@ -10,27 +10,40 @@ import UIKit
 import Parse
 import MBProgressHUD
 
-class PopularViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PopularViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchResultsUpdating {
 
+    @IBOutlet weak var searchBarPlaceholder: UIView!
     @IBOutlet weak var popularBooksCollectionView: UICollectionView!
     
     var books: NSArray?
+    var search : NSArray?
+    var searchController: UISearchController!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Star, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
         popularBooksCollectionView.dataSource = self
         popularBooksCollectionView.delegate = self
-    }
-
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if let books = books {
-            return books.count
-        } else {
-            return 0
-        }
+        // Initializing with searchResultsController set to nil means that
+        // searchController will use this view controller to display the search results
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        
+        // If we are using this same view controller to present the results
+        // dimming it out wouldn't make sense.  Should set probably only set
+        // this to yes if using another controller to display the search results.
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        
+        // Sets this view controller as presenting view controller for the search interface
+        definesPresentationContext = true
+        
+        //view to add search bar
+        searchBarPlaceholder.addSubview(searchController.searchBar)
+        automaticallyAdjustsScrollViewInsets = false
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,13 +61,44 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.popularBooksCollectionView.reloadData()
                 HUDindicator.hide(true)
             } else {
-                print(error?.localizedDescription)
+                //print(error?.localizedDescription)
                 HUDindicator.hide(true)
             }
         }
         
-        print("books are: \(books)")
+        //print("books are: \(books)")
+        
     }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+
+        // construct query
+        let query = PFQuery(className: "Book")
+        query.whereKey("title", containsString: searchController.searchBar.text! )
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
+            if let result = result {
+                // do something with the array of object returned by the call
+                self.books = result
+                self.popularBooksCollectionView.reloadData()
+
+            } else {
+                //print(error?.localizedDescription)
+            }
+        }
+    }
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if let books = books {
+            return books.count
+        } else {
+            return 0
+        }
+    }
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = popularBooksCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PopularBooksCollectionViewCell
