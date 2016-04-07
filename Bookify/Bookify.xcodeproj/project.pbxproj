@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */; };
+		177E62B91CB5EE5F0004AF91 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E62B81CB5EE5F0004AF91 /* MessagesTableViewCell.swift */; };
+		177E62BB1CB5EE6F0004AF91 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E62BA1CB5EE6F0004AF91 /* ChatViewController.swift */; };
 		9FA64836EE1922C25207FFBB /* Pods_Bookify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */; };
 		E538C4CF1CA3783800D21204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E538C4CD1CA3783800D21204 /* Main.storyboard */; };
 		E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A23C91C91038600A742A9 /* AppDelegate.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularBooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		177E62B81CB5EE5F0004AF91 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		177E62BA1CB5EE6F0004AF91 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4E6F1D29D754FD565B369A19 /* Pods-Bookify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.debug.xcconfig"; sourceTree = "<group>"; };
 		C020DABCA8456CA186DE49E2 /* Pods_Bookify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE35003243AA0AB9726FC70B /* Pods-Bookify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bookify/Pods-Bookify.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177E62B71CB5EE4B0004AF91 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				177E62B81CB5EE5F0004AF91 /* MessagesTableViewCell.swift */,
+				177E62BA1CB5EE6F0004AF91 /* ChatViewController.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		335A614CC0B40F67604AB396 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +252,7 @@
 		E596C0151C93C527007AB4D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				177E62B71CB5EE4B0004AF91 /* Chat */,
 				E57666951CAAD47B0052E90A /* Profile */,
 				E57666941CAAD4480052E90A /* Popular */,
 				E58E61631C9F232500B6EA04 /* Sell */,
@@ -452,6 +466,7 @@
 				E58E61651C9F234F00B6EA04 /* SearchViewController.swift in Sources */,
 				E56A23FB1C91084E00A742A9 /* PopularViewController.swift in Sources */,
 				E5EC410C1C97886600082411 /* SignupViewController.swift in Sources */,
+				177E62B91CB5EE5F0004AF91 /* MessagesTableViewCell.swift in Sources */,
 				E5EC41101C9CB65E00082411 /* GoogleAPI.swift in Sources */,
 				E56A23FD1C91087D00A742A9 /* SellViewController.swift in Sources */,
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
@@ -459,6 +474,7 @@
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
 				E5EC410E1C987E2400082411 /* Parse.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
+				177E62BB1CB5EE6F0004AF91 /* ChatViewController.swift in Sources */,
 				176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

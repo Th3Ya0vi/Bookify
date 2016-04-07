@@ -39,6 +39,14 @@ class Post: NSObject {
         post.saveInBackgroundWithBlock(completion)
     }
     
+    class func postMessage(singleMessage: String,withCompletion completion: PFBooleanResultBlock?) {
+        let message = PFObject(className: "Messages")
+        message["username"] = PFUser.currentUser()?.username
+        message["message"] = singleMessage
+        // Save object
+        message.saveInBackgroundWithBlock(completion)
+    }
+    
     /**
      Method to convert UIImage to PFFile
      - parameter image: Image that the user wants to upload to parse
