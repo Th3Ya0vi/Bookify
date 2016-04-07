@@ -43,12 +43,12 @@ class GoogleAPI: NSObject {
         )
         
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (dataOrNil, response, error) in
-                                                                        
+            
             if let data = dataOrNil {
                 if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                     data, options:[]) as? NSDictionary {
                     //print("response: \(responseDictionary)")
-                   
+                    
                     self.book = responseDictionary["items"] as? [NSDictionary]
                     print(self.book)
                     self.parseDictionary()
@@ -57,7 +57,7 @@ class GoogleAPI: NSObject {
         })
         task.resume()
     }
-
+    
     func saveIsbn(withIsbn isbn :String?){
         //do string manilupation to delte "-" or "space" to leave just numbers
         self.isbn = isbn
@@ -71,7 +71,7 @@ class GoogleAPI: NSObject {
             return false
         }
     }
-        
+    
     func parseDictionary(){
         if book != nil{
             let items = book![0]
@@ -90,16 +90,16 @@ class GoogleAPI: NSObject {
             //self.previewCover!.setImageWithURL(imageUrl!)
             
             //author
-            let authors = volumeInfo?["authors"] as! NSDictionary
-            self.author = authors[0] as? String
+            let authors = volumeInfo?["authors"]
+            self.author = authors![0] as? String
             
             //isbn
-            let industryIdentifiers = volumeInfo?["industryIdentifiers"] as! NSDictionary
+            let industryIdentifiers = volumeInfo?["industryIdentifiers"]
             //isbn10
-            let identifier10 = industryIdentifiers[0] as! NSDictionary
+            let identifier10 = industryIdentifiers![0] as! NSDictionary
             self.isbn10 = identifier10["identifier"] as? String
             //isbn13
-            let identifier13 = industryIdentifiers[1] as! NSDictionary
+            let identifier13 = industryIdentifiers![1] as! NSDictionary
             self.isbn13 = identifier13["identifier"] as? String
             
             print(author)
@@ -107,7 +107,7 @@ class GoogleAPI: NSObject {
             print(self.title)
             
             NSNotificationCenter.defaultCenter().postNotificationName("Google", object: nil)
-
+            
         }
         else{
             print("Error: no book")
