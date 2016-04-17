@@ -47,17 +47,22 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate {
         
         withClass = course.course! + course.number!
         
-        Post.postUserBook(coverImage.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn10: google.isbn10, withIsbn13: google.isbn13, withClass: withClass) { (good:Bool, error:NSError?) in
-            if good{
-                print("Success: posted to Parse")
-                self.coverImage.image = nil
-                self.titleField.text = ""
-                self.authorField.text = ""
-                self.isbnField.text = ""
-                
-                self.performSegueWithIdentifier("Menu", sender: nil)
-                
+        if (titleField.hasText() && authorField.hasText()){
+            Post.postUserBook(coverImage.image, withTitle: titleField.text, withAuthor: authorField.text, withIsbn10: google.isbn10, withIsbn13: google.isbn13, withClass: withClass) { (good:Bool, error:NSError?) in
+                if good{
+                    print("Success: posted to Parse")
+                    self.coverImage.image = nil
+                    self.titleField.text = ""
+                    self.authorField.text = ""
+                    self.isbnField.text = ""
+                    
+                    self.performSegueWithIdentifier("Menu", sender: nil)
+                    
+                }
             }
+        }
+        else{
+            print("Error: fill required fields")
         }
     }
     

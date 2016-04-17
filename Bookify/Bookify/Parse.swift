@@ -26,14 +26,33 @@ class Post: NSObject {
         // Create Parse object PFObject
         let post = PFObject(className: "Book")
         
-        // Add relevant fields to the object
-        post["cover"] = getPFFileFromImage(image) // PFFile column type
-        post["user"] = PFUser.currentUser()// Pointer column type that points to PFUser
-        post["username"] = PFUser.currentUser()?.username
-        post["isbn"] = isbn10
-        post["isbn"] = isbn13
-        post["title"] = title
-        post["class"] = name
+        if image == nil{
+            // Add relevant fields to the object
+            post["user"] = PFUser.currentUser()// Pointer column type that points to PFUser
+            post["username"] = PFUser.currentUser()?.username
+            post["title"] = title
+            post["class"] = name
+        }
+        else if isbn13 == nil{
+            // Add relevant fields to the object
+            post["cover"] = getPFFileFromImage(image) // PFFile column type
+            post["user"] = PFUser.currentUser()// Pointer column type that points to PFUser
+            post["username"] = PFUser.currentUser()?.username
+            post["title"] = title
+            post["class"] = name
+        }
+        else{
+            // Add relevant fields to the object
+            post["cover"] = getPFFileFromImage(image) // PFFile column type
+            post["user"] = PFUser.currentUser()// Pointer column type that points to PFUser
+            post["username"] = PFUser.currentUser()?.username
+            post["isbn"] = isbn10
+            post["isbn"] = isbn13
+            post["title"] = title
+            post["class"] = name
+        }
+        
+
             
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
