@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Foundation
+import MessageUI
 import Parse
 
-class ProfileViewController: UIViewController, UIAlertViewDelegate {
+class ProfileViewController: UIViewController, UIAlertViewDelegate, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var settingsNavButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -108,6 +110,22 @@ class ProfileViewController: UIViewController, UIAlertViewDelegate {
     func goToChat() {
         print("go to chat")
     }
+    
+    @IBAction func onInvite(sender: AnyObject) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let messageVC = MFMessageComposeViewController()
+            messageVC.body = "Hey, try out Bookify!"
+            messageVC.recipients = [] // Optionally add some tel numbers
+            messageVC.messageComposeDelegate = self
+            // Open the SMS View controller
+            presentViewController(messageVC, animated: true, completion: nil)        }
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     func test() {
         print("pressed")
