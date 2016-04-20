@@ -39,7 +39,15 @@ class Post: NSObject {
         post.saveInBackgroundWithBlock(completion)
     }
     
-    class func postMessage(singleMessage: String,withCompletion completion: PFBooleanResultBlock?) {
+    class func setProfilePicture(profilePic: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+        let profile = PFObject(className: "Profile")
+        profile["user"] = PFUser.currentUser()?.username
+        profile["profilepicture"] = profilePic
+        // Save object
+        profile.saveInBackgroundWithBlock(completion)
+    }
+    
+    class func postMessage(singleMessage: String, withCompletion completion: PFBooleanResultBlock?) {
         let message = PFObject(className: "Messages")
         message["username"] = PFUser.currentUser()?.username
         message["message"] = singleMessage

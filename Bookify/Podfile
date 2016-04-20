@@ -10,7 +10,8 @@ target 'Bookify' do
     pod 'ParseUI'
     pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'
     pod 'FontAwesome.swift'
-    pod 'LGSideMenuController'
+    pod 'JSQMessagesViewController'
+    pod ’SRKControls’
 end
 
 target 'BookifyTests' do

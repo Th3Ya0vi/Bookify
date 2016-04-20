@@ -18,7 +18,6 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     var books: NSArray?
     var search : NSArray?
     var searchController: UISearchController!
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        //Show HUD before the request is made
+        // Show HUD before the request is made
         let HUDindicator = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         HUDindicator.labelText = "Loading"
         HUDindicator.detailsLabelText = "Please wait"
@@ -61,13 +60,11 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.popularBooksCollectionView.reloadData()
                 HUDindicator.hide(true)
             } else {
-                //print(error?.localizedDescription)
+                // print(error?.localizedDescription)
                 HUDindicator.hide(true)
             }
         }
-        
-        //print("books are: \(books)")
-        
+//         print("books are: \(books)")
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -76,7 +73,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         let query = PFQuery(className: "Book")
         query.whereKey("title", containsString: searchController.searchBar.text! )
         query.limit = 20
-        
+
         // fetch data asynchronously
         query.findObjectsInBackgroundWithBlock { (result: [PFObject]?, error: NSError?) -> Void in
             if let result = result {
@@ -85,7 +82,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.popularBooksCollectionView.reloadData()
 
             } else {
-                //print(error?.localizedDescription)
+                // print(error?.localizedDescription)
             }
         }
     }
@@ -99,17 +96,19 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = popularBooksCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PopularBooksCollectionViewCell
         cell.picture = books?[indexPath.row]["cover"] as? PFFile
+        cell.popularBookPoster.setTitle((books?[indexPath.row]["username"] as! String
+), forState: .Normal)
+        print("book poster is \(cell.popularBookPoster.titleLabel?.text)")
+        print(self.books)
         return cell
     }
     
     @IBAction func onLogout(sender: AnyObject) {
         PFUser.logOut()
         self.performSegueWithIdentifier("Login", sender: nil)
-        
         
     }
     override func didReceiveMemoryWarning() {

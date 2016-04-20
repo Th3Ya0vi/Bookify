@@ -6,58 +6,73 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FontAwesome.swift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Google-Material-Design-Icons-Swift-Google-Material-Design-Icons-Swift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Google-Material-Design-Icons-Swift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>LGSideMenuController.xcscheme</key>
+		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ParseUI.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Bookify.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SRKControls-SRKControls.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SRKControls.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -67,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6D9EDCF48A5AA1A0B1FB393CB904CF6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FAC1640D3133724FDAC795222FF3154</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +102,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0214E86E9E229E292863BC821997C4D</key>
+		<key>8389DA0C8DFD5E029744C99C13ADF475</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCA053B6430690326435042FEB61B458</key>
+		<key>8A6733753903ADE1FEF5D0A808C91668</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95DB89A8BFC5FF0BF98458651D0163CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B272B33F162D6E5C3510BA50ECF2684B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E69B92A33BF0DA69766632232536DFFD</key>
+		<key>EDA125ADA52355B7CA6DF7BA96918357</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F5AACB9459C7B49B13B30174562AA3C2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE30F838264970B6B786DC80D38A0077</key>
 		<dict>
 			<key>primary</key>
 			<true/>
