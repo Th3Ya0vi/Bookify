@@ -90,11 +90,11 @@ class GoogleAPI: NSObject {
             //self.previewCover!.setImageWithURL(imageUrl!)
             
             //author
-            let authors = volumeInfo?["authors"]
+            let authors = volumeInfo?["authors"] as? NSDictionary
             self.author = authors![0] as? String
             
             //isbn
-            let industryIdentifiers = volumeInfo?["industryIdentifiers"]
+            let industryIdentifiers = volumeInfo?["industryIdentifiers"] as? NSDictionary
             //isbn10
             let identifier10 = industryIdentifiers![0] as! NSDictionary
             self.isbn10 = identifier10["identifier"] as? String
