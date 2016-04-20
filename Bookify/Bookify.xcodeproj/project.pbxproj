@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */; };
+		177202481CC75E15006B942A /* ProfileVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177202471CC75E15006B942A /* ProfileVisitViewController.swift */; };
+		1772024A1CC7C894006B942A /* ChatMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177202491CC7C894006B942A /* ChatMenuViewController.swift */; };
+		1772024C1CC7CD67006B942A /* ChatMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772024B1CC7CD67006B942A /* ChatMenuTableViewCell.swift */; };
 		178EEDF41CC45A43004B5E4A /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178EEDF31CC45A43004B5E4A /* ProfileSettingsViewController.swift */; };
 		17C61C941CC0C2DB00714898 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C61C931CC0C2DB00714898 /* ChatViewController.swift */; };
 		17E227D01CC50CC800B9B975 /* PopularBookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E227CF1CC50CC800B9B975 /* PopularBookDetailViewController.swift */; };
@@ -54,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		176635661CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularBooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		177202471CC75E15006B942A /* ProfileVisitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVisitViewController.swift; sourceTree = "<group>"; };
+		177202491CC7C894006B942A /* ChatMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMenuViewController.swift; sourceTree = "<group>"; };
+		1772024B1CC7CD67006B942A /* ChatMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMenuTableViewCell.swift; sourceTree = "<group>"; };
 		178EEDF31CC45A43004B5E4A /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		17C61C931CC0C2DB00714898 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		17E227CF1CC50CC800B9B975 /* PopularBookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularBookDetailViewController.swift; sourceTree = "<group>"; };
@@ -115,10 +121,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177202461CC757E9006B942A /* Visiting Profile */ = {
+			isa = PBXGroup;
+			children = (
+				177202471CC75E15006B942A /* ProfileVisitViewController.swift */,
+			);
+			name = "Visiting Profile";
+			sourceTree = "<group>";
+		};
 		177E62B71CB5EE4B0004AF91 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				17C61C931CC0C2DB00714898 /* ChatViewController.swift */,
+				177202491CC7C894006B942A /* ChatMenuViewController.swift */,
+				1772024B1CC7CD67006B942A /* ChatMenuTableViewCell.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -207,6 +223,7 @@
 		E57666941CAAD4480052E90A /* Popular */ = {
 			isa = PBXGroup;
 			children = (
+				177202461CC757E9006B942A /* Visiting Profile */,
 				E56A23FA1C91084E00A742A9 /* PopularViewController.swift */,
 				17E227CF1CC50CC800B9B975 /* PopularBookDetailViewController.swift */,
 			);
@@ -476,8 +493,11 @@
 				E56A23F91C9106D400A742A9 /* LoginViewController.swift in Sources */,
 				E5F678041CA1E93C005F4EB1 /* Courses.swift in Sources */,
 				E596C0171C93C7DB007AB4D3 /* TabBarViewController.swift in Sources */,
+				177202481CC75E15006B942A /* ProfileVisitViewController.swift in Sources */,
+				1772024C1CC7CD67006B942A /* ChatMenuTableViewCell.swift in Sources */,
 				17C61C941CC0C2DB00714898 /* ChatViewController.swift in Sources */,
 				E5EC410E1C987E2400082411 /* Parse.swift in Sources */,
+				1772024A1CC7C894006B942A /* ChatMenuViewController.swift in Sources */,
 				E56A23CA1C91038600A742A9 /* AppDelegate.swift in Sources */,
 				176635671CA328E100EEDDB0 /* PopularBooksCollectionViewCell.swift in Sources */,
 			);

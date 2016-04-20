@@ -101,7 +101,7 @@ extension ChatViewController {
         
         let diameter = UInt(collectionView.collectionViewLayout.outgoingAvatarViewSize.width)
         
-        let image = UIImage(named: "Bookify Sign Up Screen")
+        let image = UIImage(named: "Blank")
         return JSQMessagesAvatarImageFactory.avatarImageWithImage(image, diameter: diameter)//nil//JSQMessageAvatarImageDataSource.
     }
     

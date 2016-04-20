@@ -93,7 +93,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Bookify/MBProgressHUD.framework"
   install_framework "Pods-Bookify/Parse.framework"
   install_framework "Pods-Bookify/ParseUI.framework"
-  install_framework "Pods-Bookify/SRKControls.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Bookify/AFNetworking.framework"
@@ -105,5 +104,4 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Bookify/MBProgressHUD.framework"
   install_framework "Pods-Bookify/Parse.framework"
   install_framework "Pods-Bookify/ParseUI.framework"
-  install_framework "Pods-Bookify/SRKControls.framework"
 fi

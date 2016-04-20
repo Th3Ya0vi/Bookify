@@ -9,149 +9,361 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController, UIAlertViewDelegate {
+class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var settingsNavButton: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var fullScreenImageView: UIImageView!
-    @IBOutlet var tapView: UIView?
-    let tapRec = UITapGestureRecognizer()
-    var blurEffectView = UIVisualEffectView()
-    let button = UIButton()
-    var button1 = UIButton()
-    let circle = UIImageView()
+    @IBOutlet weak var collegeMajorLabel: UILabel!
+    @IBOutlet weak var numberOfBooksPosted: UILabel!
+    @IBOutlet weak var numberOfBooksSold: UILabel!
+    @IBOutlet weak var holdPickerView: UIView!
+    @IBOutlet weak var collegeMajorPickerView: UIPickerView!
+    @IBOutlet weak var saveChange: UIButton!
+    @IBOutlet weak var editProfile: UIButton!
+  
+    // Needed just for fading out
+    @IBOutlet weak var profileDescriptionTextView: UITextView!
+    @IBOutlet weak var locationIcon: UIImageView!
+    @IBOutlet weak var collegeNameLabel: UILabel!
+    @IBOutlet weak var gradIconImageView: UIImageView!
+    @IBOutlet weak var numBS: UILabel!
+    @IBOutlet weak var numBP: UILabel!
+    
+    // Profile Picture Button
+    var profileButton = UIButton()
+    
+    // Description Button
+    var descriptionButton = UIButton()
+    
+    // Profile Picture
+    var profileImages: NSArray?
+    
+    var majors = ["Computer Science", "Electrical Engineering"]
+    var counter = 0
+    var blurEffect = UIBlurEffect()
+    var blurView = UIVisualEffectView()
+    var editButton = UIButton()
     
     @IBAction func onLogout(sender: AnyObject) {
         PFUser.logOut()
-        self.performSegueWithIdentifier("Login", sender: nil)
+        self.performSegueWithIdentifier("logout", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        settingsNavButton.alpha = 0.9
-        tapRec.addTarget(self, action: "tappedView:")
-        tapView!.addGestureRecognizer(tapRec)
-        tapView?.userInteractionEnabled = true
-        profilePictureImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        print("height is \(self.view.frame.size.height)")
-        print("width is \(self.view.frame.size.width)")
-        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.size.width / 2.1
-        profilePictureImageView.clipsToBounds = true
-        profilePictureImageView.layer.borderWidth = 0.7
-        profilePictureImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame.size.height = headerImageView.frame.size.height
-        blurEffectView.frame.size.width = headerImageView.frame.size.width
-        
-        print("headerView height: \(headerImageView.frame.size.height), blur height: \(blurEffectView.frame.size.height)")
-        view.addSubview(blurEffectView)
+        self.view.sendSubviewToBack(holdPickerView)
+        // Set username
         usernameLabel.text = PFUser.currentUser()?.username
-//        self.tabBarItem.image = UIImage.fontAwesomeIconWithName(.User, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
-
+        
+        // UIPickerView Data Source and Delegate
+        self.collegeMajorPickerView.dataSource = self
+        self.collegeMajorPickerView.delegate = self
+        
+        // Trigger College Major Label click
+        let tempButton = UIButton()
+        tempButton.frame = collegeMajorLabel.frame
+        print("tempView height, width: \(tempButton.frame.height), \(tempButton.frame.width)")
+        print("College major label height, width: \(collegeMajorLabel.frame.height), \(collegeMajorLabel.frame.width)")
+        tempButton.addTarget(self, action: #selector(ProfileViewController.showPickerView), forControlEvents: .TouchUpInside)
+        self.view.addSubview(tempButton)
     }
     
-    func tappedView(tapImageView: UITapGestureRecognizer) {
-        print("profile tapped")
-        fullScreenImageView.image = profilePictureImageView.image
-        view.bringSubviewToFront(fullScreenImageView)
-        fullScreenImageView.contentMode = .ScaleAspectFill
-        fullScreenImageView.frame = self.view.frame
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        view.addSubview(blurEffectView)
-        circle.image = fullScreenImageView.image
-        circle.contentMode = UIViewContentMode.ScaleAspectFill
-        print("height is \(self.view.frame.size.height)")
-        print("width is \(self.view.frame.size.width)")
-        circle.frame = CGRect(x: 71, y: 50, width: 150, height: 150)
-        circle.center = CGPoint(x: 150, y: 190)
-        circle.layer.cornerRadius = circle.frame.size.width / 2
-        circle.clipsToBounds = true
-        circle.layer.borderWidth = 0.7
-        circle.layer.borderColor = UIColor.blackColor().CGColor
-        view.addSubview(circle)
-        button.setImage(UIImage(named: "XOut.png"), forState: .Normal)
-        button.imageView?.contentMode = .ScaleAspectFit
-        button.bounds = CGRect(x: 0, y: 0, width: 130, height: 40)
-        button.center = CGPoint(x: 270, y: 120)
-        button.addTarget(self, action: Selector("test"), forControlEvents: .TouchUpInside)
-        self.view.addSubview(button)
-        self.view.bringSubviewToFront(button)
-        button1.bounds = CGRect(x: 0, y: 0, width: 200, height: 60)
-        button1.center = CGPoint(x: 205, y: 310)
-        button1.clipsToBounds = true
-        button1.layer.cornerRadius = 4
-        button1.frame.size.width = 90
-        button1.frame.size.height = 30
-        button1.setTitle("Message", forState: .Normal)
-        button1.layer.borderColor = UIColor.blackColor().CGColor
-        button1.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        button1.backgroundColor = UIColor(red: 52/255, green: 73/255, blue: 94/255, alpha: 1.0)
-        button1.addTarget(self, action: Selector("goToChat"), forControlEvents: .TouchUpInside)
-        self.view.addSubview(button1)
-        self.view.bringSubviewToFront(button1)
-        fullScreenImageView.alpha = 1
-        blurEffectView.alpha = 1
-        circle.alpha = 1
-        button1.alpha = 1
-        button.alpha = 1
-        profilePictureImageView.alpha = 0
-        usernameLabel.alpha = 0
+    func fadeInPickerView(duration duration: NSTimeInterval = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            self.blurUI()
+            self.blurView.alpha = 1
+            self.holdPickerView.alpha = 1
+            self.collegeMajorPickerView.alpha = 1
+            self.saveChange.alpha = 0.7
+            self.view.bringSubviewToFront(self.blurView)
+            self.view.bringSubviewToFront(self.holdPickerView)
+        })
     }
     
-    func goToChat() {
-        print("go to chat")
+    func blurUI() {
+        self.editProfile.alpha = 0
+        self.profileImageView.alpha = 0
+        self.usernameLabel.alpha = 0
+        self.collegeMajorLabel.alpha = 0
+//        self.numberOfBooksPosted.alpha = 0
+//        self.numberOfBooksSold.alpha = 0
+//        self.profileDescriptionTextView.alpha = 0
+        self.collegeNameLabel.alpha = 0
+        self.blurView.alpha = 1
+        self.gradIconImageView.alpha = 0
+//        self.numBP.alpha = 0
+        self.collegeMajorLabel.alpha = 0
+        self.locationIcon.alpha = 0
+//        self.numBS.alpha = 0
+        self.editButton.alpha = 0
     }
     
-    func test() {
-        print("pressed")
-        fullScreenImageView.alpha = 0
-        blurEffectView.alpha = 0
-        circle.alpha = 0
-        button1.alpha = 0
-        button.alpha = 0
-        profilePictureImageView.alpha = 1
-        usernameLabel.alpha = 1
-        self.view.sendSubviewToBack(fullScreenImageView)
-        self.view.sendSubviewToBack(blurEffectView)
-        self.view.sendSubviewToBack(circle)
-        self.view.sendSubviewToBack(button)
-        self.view.sendSubviewToBack(button1)
-        self.view.bringSubviewToFront(profilePictureImageView)
+    func fadeOutEditLabel(duration duration: NSTimeInterval = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            self.editProfile.alpha = 0
+            self.editButton.alpha = 1
+            self.editButton.setImage(UIImage(named: "XOut"), forState: .Normal)
+            self.editButton.imageView?.image = UIImage(named: "XOut")
+            self.editButton.frame = CGRect(x: 300, y: 70, width: 70, height: 70)
+            self.editButton.addTarget(self, action: #selector(ProfileViewController.fadeOutX), forControlEvents: .TouchUpInside)
+            self.view.addSubview(self.editButton)
+            self.view.bringSubviewToFront(self.editButton)
+            self.darkenUI()
+        })
+    }
+    
+    func darkenUI(duration duration: NSTimeInterval = 0.5) {
+        self.profileImageView.alpha = 1
+        self.collegeMajorLabel.alpha = 1
+//        self.profileDescriptionTextView.alpha = 1
+        self.locationIcon.alpha = 1
+        self.collegeNameLabel.alpha = 1
+        self.usernameLabel.alpha = 1
+        self.gradIconImageView.alpha = 1
+//        self.numberOfBooksPosted.alpha = 1
+//        self.numberOfBooksSold.alpha = 1
+    }
+    
+    func lightenUI(duration duration: NSTimeInterval = 0.5) {
+        self.profileImageView.alpha = 0.5
+        self.collegeMajorLabel.alpha = 0.4
+//        self.profileDescriptionTextView.alpha = 0.4
+        self.locationIcon.alpha = 0.4
+        self.collegeNameLabel.alpha = 0.4
+        self.usernameLabel.alpha = 1
+        self.gradIconImageView.alpha = 0.4
+//        self.numberOfBooksPosted.alpha = 0.4
+//        self.numberOfBooksSold.alpha = 0.4
+    }
+    
+    func fadeInEditLabel(duration duration: NSTimeInterval = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            
+            self.editProfile.alpha = 0.7
+        })
+    }
+    
+    @IBAction func editProfileButtonPressed(sender: AnyObject) {
+        print("height is \(self.editProfile.frame.size.height) width is \(self.editProfile.frame.size.width)")
+        self.editButton.frame = CGRect(x: 300, y: 70, width: 70, height: 70)
+        self.editButton.alpha = 0
+        fadeOutEditLabel()
+        print("edit label is \(self.editButton.frame)")
+        self.profileButton.frame = self.profileImageView.frame
+        self.profileButton.addTarget(self, action: #selector(ProfileViewController.choosePicture), forControlEvents: .TouchUpInside)
+        self.view.addSubview(self.profileButton)
+    }
+    
+    func choosePicture() {
+        if self.locationIcon.alpha == 1 {
+            self.blurUI()
+            let alertController = UIAlertController(title: nil, message: "Choose which way you want to set a new profile picture.", preferredStyle: .ActionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                // ...
+                print("Cancel pressed")
+                self.fadeOutPicker()
+            }
+            
+            alertController.addAction(cancelAction)
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) in
+                // ...
+            }
+            
+            alertController.addAction(cameraAction)
+            
+            let uploadAction = UIAlertAction(title: "Choose From Library", style: .Default) { (action) in
+                let vc = UIImagePickerController()
+                vc.delegate = self
+                vc.allowsEditing = true
+                vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+            
+            alertController.addAction(uploadAction)
+            
+//            let destroyAction = UIAlertAction(title: "Destroy", style: .Destructive) { (action) in
+//                print(action)
+//                self.fadeOutPicker()
+//            }
+//            alertController.addAction(destroyAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+        self.fadeOutPicker()
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("got image")
+        // Get the image captured by the UIImagePickerController
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        if profileImageView.image == UIImage(named: "Blank") {
+            Post.setProfilePicture(self.profileImageView.image!, withCompletion: { (success: Bool, error: NSError?) in
+                if success {
+                    print("successfully posted profile picture to Parse")
+                    self.profileImageView.image = originalImage
+                } else {
+                    print("failed to post profile picture to Parse")
+                    let alertController = UIAlertController(title: "Failed", message: "You may have a bad connection. Try again later.", preferredStyle: .Alert)
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                        // ...
+                        print("Cancel pressed")
+                        self.fadeOutPicker()
+                    }
+                    alertController.addAction(cancelAction)
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
+                }
+            })
+//        }0596009208
+        dismissViewControllerAnimated(true, completion: nil)
+        self.fadeOutPicker()
+    }
+    
+    func fadeOutX() {
+        fadeOX()
+    }
+    
+    func fadeOX(duration duration: NSTimeInterval = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            self.editButton.alpha = 0
+            self.fadeInEditLabel()
+            self.lightenUI()
+        })
+    }
+    
+    func fadeInX(duration duration: NSTimeInterval = 1.0) {
+        UIView.animateWithDuration(duration, animations: {
+            self.editButton.alpha = 1
+        })
+    }
+    
+    func fadeOutPicker() {
+        self.holdPickerView.alpha = 0
+        self.collegeMajorPickerView.alpha = 0
+        self.saveChange.alpha = 0
+        self.profileImageView.alpha = 0.5
+        self.usernameLabel.alpha = 1
+        self.locationIcon.alpha = 0.4
+//        self.profileDescriptionTextView.alpha = 0.4
+        self.collegeNameLabel.alpha = 0.4
+        self.gradIconImageView.alpha = 0.4
+        self.collegeMajorLabel.alpha = 0.4
+//        self.numberOfBooksPosted.alpha = 0.4
+//        self.numberOfBooksSold.alpha = 0.4
+        self.editProfile.alpha = 0.7
+        self.blurView.alpha = 0
+//        self.numBS.alpha = 1
+//        self.numBP.alpha = 1
+        self.view.sendSubviewToBack(self.holdPickerView)
+    }
+    
+    func fadeOutPickerView(duration duration: NSTimeInterval = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            self.holdPickerView.alpha = 0
+            self.collegeMajorPickerView.alpha = 0
+            self.saveChange.alpha = 0
+            self.profileImageView.alpha = 0.5
+            self.usernameLabel.alpha = 1
+            self.locationIcon.alpha = 0.4
+//            self.profileDescriptionTextView.alpha = 0.4
+            self.collegeNameLabel.alpha = 0.4
+            self.gradIconImageView.alpha = 0.4
+            self.collegeMajorLabel.alpha = 0.4
+//            self.numberOfBooksPosted.alpha = 0.4
+//            self.numberOfBooksSold.alpha = 0.4
+            self.editProfile.alpha = 0.7
+            self.blurView.alpha = 0
+//            self.numBS.alpha = 1
+//            self.numBP.alpha = 1
+            self.view.sendSubviewToBack(self.holdPickerView)
+        })
+    }
+    
+    func showPickerView() {
+        if self.locationIcon.alpha == 1.0 {
+            print("pressed")
+            // Blur self.view
+            self.blurEffect = UIBlurEffect(style: .Light)
+            self.blurView = UIVisualEffectView(effect: self.blurEffect)
+            self.blurView.frame = self.view.frame
+            self.blurView.center = self.view.center
+            self.view.addSubview(self.blurView)
+            self.blurView.alpha = 0
+            self.fadeInPickerView()
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return majors[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return majors.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    @IBAction func saveCollegeMajorChange(sender: AnyObject) {
+        // Write to college major label
+        print("saved!")
+        // Hide views
+        self.editButton.alpha = 0
+        fadeOutPickerView()
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        counter = row
+    }
+    
+    var picture: PFFile? {
+        didSet {
+            print(picture)
+            picture?.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    self.profileImageView.image = UIImage(data: data!)!
+                }
+                else {
+                    print(error?.localizedDescription)
+                    print("ERROR")
+                }
+            })
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-//        let alertController = UIAlertController(title: "Profile", message: "NO PROFILE", preferredStyle: .Alert)
-//        let cancelAction = UIAlertAction(title: "Okay", style: .Default) { (action) in
-//            //print(action)
-//        }
-//        alertController.addAction(cancelAction)
-//        self.presentViewController(alertController, animated: true) {
-//            // ...
-//        }
-        
+//        self.view.bringSubviewToFront(self.profileDescriptionTextView)
+        let query = PFQuery(className: "Profile")
+        query.findObjectsInBackgroundWithBlock { (profilepicture: [PFObject]?, error: NSError?) -> Void in
+            if let profilepicture = profilepicture {
+                self.profileImages = profilepicture
+            } else {
+                // print(error?.localizedDescription)
+            }
+        }
+        picture = profileImages?[1]["profilepicture"] as? PFFile
+        print("picture is \(picture)")
+        holdPickerView.alpha = 0
+        collegeMajorPickerView.alpha = 0
+        saveChange.alpha = 0
+        self.view.sendSubviewToBack(holdPickerView)
+        usernameLabel.text = PFUser.currentUser()?.username
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: Allow for using Camera Roll / Camera
-    
 }

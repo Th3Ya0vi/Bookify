@@ -14,7 +14,7 @@ class PopularBooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var popularBooksImageView: UIImageView!
 
     @IBOutlet weak var popularBookPoster: UIButton!
-
+    
     var picture: PFFile? {
         didSet {
             print(picture)

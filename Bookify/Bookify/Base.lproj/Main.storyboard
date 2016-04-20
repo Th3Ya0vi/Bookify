@@ -365,40 +365,6 @@
             </objects>
             <point key="canvasLocation" x="4308.5" y="1502.5"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="yMd-KZ-oNg">
-            <objects>
-                <viewController title="Settings" id="nKn-tj-eHj" customClass="ProfileSettingsViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rPM-kw-HjY"/>
-                        <viewControllerLayoutGuide type="bottom" id="RQu-XG-5kx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lsp-Io-FVN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qP-kL-Mgd">
-                                <rect key="frame" x="20" y="72" width="57" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAg-Nk-BjJ">
-                                <rect key="frame" x="175" y="68" width="141" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="duJ-p7-mhH"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xbH-Dl-M0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2969.5" y="2105.5"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="IgP-Qv-9mu">
             <objects>
@@ -411,102 +377,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYh-Yn-mIM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bookify Sign In Screen Blurred" translatesAutoresizingMaskIntoConstraints="NO" id="N2e-8S-MZY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-OJ-YlT">
-                                <rect key="frame" x="0.0" y="65" width="375" height="64"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bookify Sign Up Screen" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-RI-Ulm">
-                                <rect key="frame" x="19" y="99" width="62" height="58"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-RI-Ulm">
+                                <rect key="frame" x="20" y="80" width="62" height="58"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-8x-S3Z">
-                                <rect key="frame" x="19" y="165" width="165" height="21"/>
+                                <rect key="frame" x="20" y="147" width="165" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Say something about yourself..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-5L-HML">
-                                <rect key="frame" x="20" y="211" width="335" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" text="Say something about yourself..." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-5L-HML">
+                                <rect key="frame" x="20" y="193" width="335" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Marker" translatesAutoresizingMaskIntoConstraints="NO" id="LAV-aw-trl">
-                                <rect key="frame" x="20" y="191" width="12" height="12"/>
+                                <rect key="frame" x="21" y="173" width="12" height="15"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="College" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNO-7O-YYc">
-                                <rect key="frame" x="39" y="190" width="41" height="15"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gender Neutral User Filled" translatesAutoresizingMaskIntoConstraints="NO" id="7cA-zC-YJL">
-                                <rect key="frame" x="81" y="191" width="14" height="14"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgr-L1-r9h">
-                                <rect key="frame" x="101" y="190" width="41" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texas A&amp;M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNO-7O-YYc">
+                                <rect key="frame" x="35" y="173" width="53" height="15"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Student Male Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="cIK-yW-o0P">
-                                <rect key="frame" x="145" y="191" width="14" height="14"/>
+                                <rect key="frame" x="101" y="173" width="14" height="15"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-1M-D3L">
-                                <rect key="frame" x="165" y="190" width="41" height="15"/>
+                                <rect key="frame" x="119" y="173" width="41" height="15"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-Wa-zfX">
-                                <rect key="frame" x="20" y="253" width="22" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-Wa-zfX">
+                                <rect key="frame" x="21" y="235" width="22" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books Sold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7T-bf-DS3">
-                                <rect key="frame" x="44" y="253" width="78" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books Posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7T-bf-DS3">
+                                <rect key="frame" x="44" y="235" width="85" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reputation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUG-2S-ZjZ">
-                                <rect key="frame" x="165" y="253" width="66" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fY-Zk-QYb">
-                                <rect key="frame" x="141" y="253" width="21" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-dL-gFY">
+                                <rect key="frame" x="137" y="235" width="22" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books Sold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-DX-Vh0">
+                                <rect key="frame" x="160" y="235" width="78" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-gz-L3l">
+                                <rect key="frame" x="261" y="80" width="94" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Edit Profile">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editProfileButtonPressed:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="UVz-77-Uae"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-4W-dOn">
+                                <rect key="frame" x="28" y="115" width="318" height="495"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87N-hQ-X0G">
+                                        <rect key="frame" x="120" y="20" width="80" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveCollegeMajorChange:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="0tP-qK-JCs"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDX-b5-hNt">
+                                        <rect key="frame" x="-7" y="58" width="332" height="374"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="JV9-Fu-6jm" id="0c2-O0-IZh"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bv5-pc-SDV">
-                        <barButtonItem key="leftBarButtonItem" id="Zg6-8o-bqj">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="75s-jY-0fX">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="TjS-UY-qka">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UAb-9s-s5e">
+                                <rect key="frame" x="16" y="9" width="150" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <action selector="onLogout:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="Z18-nR-Skh"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="npr-u6-n8N">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oqo-iQ-aZM">
-                                <rect key="frame" x="339" y="12" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Settings-48">
-                                    <color key="titleColor" red="0.24852251759944177" green="0.55838526522843146" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8Rf-Xd-h3w" kind="show" id="9cb-sW-EH4"/>
+                                    <action selector="onLogout:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="eLj-jm-gju"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -514,18 +488,22 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="fullScreenImageView" destination="EYh-Yn-mIM" id="gY5-Kg-KnP"/>
-                        <outlet property="headerImageView" destination="5k5-OJ-YlT" id="KJZ-48-hsn"/>
-                        <outlet property="profilePictureImageView" destination="ud9-RI-Ulm" id="VO9-ng-bPr"/>
-                        <outlet property="settingsNavButton" destination="Oqo-iQ-aZM" id="9fl-P9-Cxe"/>
-                        <outlet property="tapView" destination="ud9-RI-Ulm" id="fL8-cx-p0e"/>
-                        <outlet property="usernameLabel" destination="OTl-8x-S3Z" id="Y85-bm-kwo"/>
-                        <segue destination="Q59-Ta-zvB" kind="presentation" identifier="Login" id="TZz-jz-TeY"/>
+                        <outlet property="collegeMajorLabel" destination="gyr-1M-D3L" id="urO-Zx-U5V"/>
+                        <outlet property="collegeMajorPickerView" destination="QDX-b5-hNt" id="VqK-Xa-xoC"/>
+                        <outlet property="collegeNameLabel" destination="fNO-7O-YYc" id="Slu-ez-YgZ"/>
+                        <outlet property="editProfile" destination="Nye-gz-L3l" id="o2h-wG-hVg"/>
+                        <outlet property="gradIconImageView" destination="cIK-yW-o0P" id="L01-dT-Isr"/>
+                        <outlet property="holdPickerView" destination="KFk-4W-dOn" id="7hl-VH-536"/>
+                        <outlet property="locationIcon" destination="LAV-aw-trl" id="Lh3-ja-4Ks"/>
+                        <outlet property="profileImageView" destination="ud9-RI-Ulm" id="JsT-0W-aRH"/>
+                        <outlet property="saveChange" destination="87N-hQ-X0G" id="aRs-i0-cMq"/>
+                        <outlet property="usernameLabel" destination="OTl-8x-S3Z" id="8MB-zR-nhW"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="5e4-rZ-vba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2k-bM-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.5" y="2105.5"/>
+            <point key="canvasLocation" x="2030.5" y="2170.5"/>
         </scene>
         <!--Chat-->
         <scene sceneID="boU-Oy-EPs">
@@ -555,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbG-eb-VgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4379.5" y="67.5"/>
+            <point key="canvasLocation" x="4991.5" y="-757.5"/>
         </scene>
         <!--Popular-->
         <scene sceneID="m3X-QZ-ubk">
@@ -586,11 +564,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAz-V5-Zl1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="116"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfh-Cj-BD4">
                                                     <rect key="frame" x="12" y="0.0" width="75" height="116"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-vL-Qpf">
                                                     <rect key="frame" x="12" y="116" width="75" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <state key="normal" title="Username"/>
                                                 </button>
                                             </subviews>
@@ -637,7 +620,7 @@
                         <outlet property="popularBooksCollectionView" destination="OTJ-RQ-LSY" id="sAe-a3-6oD"/>
                         <outlet property="searchBarPlaceholder" destination="2lw-Ka-erR" id="MO1-ik-e82"/>
                         <segue destination="Q59-Ta-zvB" kind="presentation" identifier="Login" id="Gvn-Ou-xix"/>
-                        <segue destination="9ZH-8C-WXk" kind="show" id="tOP-HQ-yAr"/>
+                        <segue destination="9ZH-8C-WXk" kind="show" identifier="bookCoverPressed" id="tOP-HQ-yAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tll-yX-4cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -660,25 +643,106 @@
                                 <rect key="frame" x="10" y="82" width="163" height="203"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-g6-fmH">
-                                <rect key="frame" x="181" y="82" width="194" height="60"/>
+                                <rect key="frame" x="181" y="82" width="194" height="45"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-Ss-XmL">
-                                <rect key="frame" x="181" y="224" width="194" height="61"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-aW-euP">
-                                <rect key="frame" x="10" y="293" width="365" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="181" y="255" width="172" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="11"/>
                                 <state key="normal" title="Posted by username"/>
+                                <connections>
+                                    <segue destination="mva-ut-qBI" kind="show" id="hw8-xO-R61"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yij-RZ-7t0">
-                                <rect key="frame" x="181" y="150" width="194" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yij-RZ-7t0">
+                                <rect key="frame" x="181" y="167" width="194" height="66"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdm-qu-7hc">
+                                <rect key="frame" x="10" y="329" width="345" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Message"/>
+                                <connections>
+                                    <action selector="messageUser:" destination="9ZH-8C-WXk" eventType="touchUpInside" id="7Ef-aM-wC7"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TL0-KN-yeQ">
+                                <rect key="frame" x="10" y="293" width="164" height="29"/>
+                                <segments>
+                                    <segment title="For Sale"/>
+                                    <segment title="Sold"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bookAuthorLabel" destination="Yij-RZ-7t0" id="Unk-Pv-4nN"/>
+                        <outlet property="bookCoverImageView" destination="0B3-Tb-2Wh" id="FmO-Eq-s7h"/>
+                        <outlet property="bookPosterProfile" destination="W1P-aW-euP" id="CDV-2i-rEd"/>
+                        <outlet property="bookTitleLabel" destination="FtH-g6-fmH" id="Z1E-Kb-V8x"/>
+                        <outlet property="messageUserPressed" destination="Mdm-qu-7hc" id="1qD-rs-2xI"/>
+                        <segue destination="Zff-WX-yKz" kind="show" identifier="goToChat" id="NJU-Qj-UXp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeG-2R-dqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3436.5" y="67.5"/>
+        </scene>
+        <!--Visiting Profile-->
+        <scene sceneID="lVp-F1-7mB">
+            <objects>
+                <viewController title="Visiting Profile" id="mva-ut-qBI" customClass="ProfileVisitViewController" customModule="Bookify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIZ-LI-KcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="4E5-1y-sQ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jRY-Jl-tko">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bookify Sign In Screen Blurred" translatesAutoresizingMaskIntoConstraints="NO" id="KTa-hv-fB1">
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j5-4M-BZq">
+                                <rect key="frame" x="20" y="135" width="165" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Marker" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-t3-eLy">
+                                <rect key="frame" x="20" y="198" width="28" height="28"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Student Male Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-M5-MY3">
+                                <rect key="frame" x="105" y="161" width="14" height="14"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-OJ-15E">
+                                <rect key="frame" x="127" y="161" width="41" height="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-Dj-Toi">
+                                <rect key="frame" x="20" y="81" width="50" height="46"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9C-mh-Bzp">
+                                <rect key="frame" x="292" y="159" width="63" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Message">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="messageUser:" destination="mva-ut-qBI" eventType="touchUpInside" id="APo-Vi-niK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texas A&amp;M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYV-Ik-iGM">
+                                <rect key="frame" x="56" y="193" width="159" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -686,10 +750,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collegeMajorLabel" destination="qyH-OJ-15E" id="0Om-s0-5Fj"/>
+                        <outlet property="profilePictureImageView" destination="l7l-Dj-Toi" id="q3m-aP-xtx"/>
+                        <outlet property="usernameLabel" destination="5j5-4M-BZq" id="RoV-XR-Eam"/>
+                        <segue destination="Zff-WX-yKz" kind="show" identifier="goToChat" id="GYo-Xy-OCH"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WeG-2R-dqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTQ-tj-qcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3436.5" y="67.5"/>
+            <point key="canvasLocation" x="4135.5" y="-757.5"/>
         </scene>
         <!--Menu-->
         <scene sceneID="54A-Wl-zck">
@@ -802,48 +872,28 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ji6-OJ-k1A" kind="relationship" relationship="rootViewController" id="tx9-SQ-C0f"/>
+                        <segue destination="Ji6-OJ-k1A" kind="relationship" relationship="rootViewController" id="4Va-Cs-0Wp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYl-Zy-uuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3926.5" y="67.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TSL-jY-JYW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Rf-Xd-h3w" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vvb-pu-43g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nKn-tj-eHj" kind="relationship" relationship="rootViewController" id="BpN-qm-PL0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uSP-3l-uoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2508.5" y="2105.5"/>
+            <point key="canvasLocation" x="3997.5" y="182.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Blank" width="50" height="50"/>
         <image name="Bookify Sign In Screen Blurred" width="6000" height="4000"/>
         <image name="Bookify Sign Up Screen" width="3914" height="5863"/>
-        <image name="Gender Neutral User Filled" width="50" height="50"/>
         <image name="Marker" width="50" height="50"/>
-        <image name="Settings-48" width="48" height="48"/>
         <image name="Student Male Filled-50" width="50" height="50"/>
-        <image name="background" width="4592" height="3056"/>
         <image name="iconmonstr-banknote-15-24.png" width="24" height="24"/>
         <image name="iconmonstr-star-5-24.png" width="24" height="24"/>
         <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MsK-yq-CgJ"/>
+        <segue reference="NJU-Qj-UXp"/>
+        <segue reference="5e4-rZ-vba"/>
         <segue reference="JZl-dM-gpC"/>
-        <segue reference="TZz-jz-TeY"/>
     </inferredMetricsTieBreakers>
 </document>

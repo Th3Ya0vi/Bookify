@@ -96,13 +96,20 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("clicked!")
+        bookArray = (books?[indexPath.row]) as? PFObject
+        self.performSegueWithIdentifier("bookCoverPressed", sender: nil)
+    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = popularBooksCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PopularBooksCollectionViewCell
         cell.picture = books?[indexPath.row]["cover"] as? PFFile
         cell.popularBookPoster.setTitle((books?[indexPath.row]["username"] as! String
 ), forState: .Normal)
-        print("book poster is \(cell.popularBookPoster.titleLabel?.text)")
-        print(self.books)
+//        print("book poster is \(cell.popularBookPoster.titleLabel?.text)")
+//        print(self.books)
+        cell.popularBooksImageView.userInteractionEnabled = true
         return cell
     }
     
@@ -111,11 +118,11 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UICol
         self.performSegueWithIdentifier("Login", sender: nil)
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
