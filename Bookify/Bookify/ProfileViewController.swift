@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Foundation
+import MessageUI
 import Parse
 
-class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -328,23 +330,37 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         counter = row
     }
     
-    var picture: PFFile? {
-        didSet {
-            print(picture)
-            picture?.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
-                if error == nil {
-                    self.profileImageView.image = UIImage(data: data!)!
-                }
-                else {
-                    print(error?.localizedDescription)
-                    print("ERROR")
-                }
-            })
-        }
+    @IBAction func onInvite(sender: AnyObject) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let messageVC = MFMessageComposeViewController()
+            messageVC.body = "Hey, try out Bookify!"
+            messageVC.recipients = [] // Optionally add some tel numbers
+            messageVC.messageComposeDelegate = self
+            // Open the SMS View controller
+            presentViewController(messageVC, animated: true, completion: nil)        }
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
-//        self.view.bringSubviewToFront(self.profileDescriptionTextView)
+//        var picture: PFFile? {
+//            didSet {
+//                print(picture)
+//                picture?.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
+//                    if error == nil {
+//                        self.profileImageView.image = UIImage(data: data!)!
+//                    }
+//                    else {
+//                        print(error?.localizedDescription)
+//                        print("ERROR")
+//                    }
+//                })
+//            }
+//        }
+        //        self.view.bringSubviewToFront(self.profileDescriptionTextView)
         let query = PFQuery(className: "Profile")
         query.findObjectsInBackgroundWithBlock { (profilepicture: [PFObject]?, error: NSError?) -> Void in
             if let profilepicture = profilepicture {
@@ -353,8 +369,8 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 // print(error?.localizedDescription)
             }
         }
-        picture = profileImages?[1]["profilepicture"] as? PFFile
-        print("picture is \(picture)")
+//        picture = profileImages?[1]["profilepicture"] as? PFFile
+//        print("picture is \(picture)")
         holdPickerView.alpha = 0
         collegeMajorPickerView.alpha = 0
         saveChange.alpha = 0

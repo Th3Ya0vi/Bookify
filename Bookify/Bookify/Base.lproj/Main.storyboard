@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -101,7 +102,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WNk-1q-U9c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RMR-To-f0Y">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bookify Sign Up Screen" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-et-hXQ">
@@ -473,15 +474,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bv5-pc-SDV">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="TjS-UY-qka">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UAb-9s-s5e">
-                                <rect key="frame" x="16" y="9" width="150" height="26"/>
+                        <leftBarButtonItems>
+                            <barButtonItem id="Zg6-8o-bqj">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="75s-jY-0fX">
+                                    <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Logout"/>
+                                    <connections>
+                                        <action selector="onLogout:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="Z18-nR-Skh"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem id="hiL-df-gEk">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Fr-qI-FUW">
+                                    <rect key="frame" x="107" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Invite"/>
+                                    <connections>
+                                        <action selector="onInvite:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="GfQ-YB-BTD"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" id="npr-u6-n8N">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oqo-iQ-aZM">
+                                <rect key="frame" x="339" y="12" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="onLogout:" destination="JV9-Fu-6jm" eventType="touchUpInside" id="eLj-jm-gju"/>
-                                </connections>
+                                <state key="normal" image="Settings-48">
+                                    <color key="titleColor" red="0.24852251759944177" green="0.55838526522843146" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -601,6 +622,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g3z-iA-4zY">
+                        <barButtonItem key="leftBarButtonItem" id="zQX-Jy-Fa7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cZI-2N-uW9">
+                                <rect key="frame" x="16" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="EyK-HK-TeS">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MX5-3m-7Mv">
                                 <rect key="frame" x="311" y="37" width="48" height="30"/>
@@ -885,6 +912,7 @@
         <image name="Bookify Sign In Screen Blurred" width="6000" height="4000"/>
         <image name="Bookify Sign Up Screen" width="3914" height="5863"/>
         <image name="Marker" width="50" height="50"/>
+        <image name="Settings-48" width="6000" height="4000"/>
         <image name="Student Male Filled-50" width="50" height="50"/>
         <image name="iconmonstr-banknote-15-24.png" width="24" height="24"/>
         <image name="iconmonstr-star-5-24.png" width="24" height="24"/>
