@@ -207,7 +207,6 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         print("got image")
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-//        if profileImageView.image == UIImage(named: "Blank") {
             Post.setProfilePicture(self.profileImageView.image!, withCompletion: { (success: Bool, error: NSError?) in
                 if success {
                     print("successfully posted profile picture to Parse")
@@ -227,7 +226,6 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                     }
                 }
             })
-//        }0596009208
         dismissViewControllerAnimated(true, completion: nil)
         self.fadeOutPicker()
     }
@@ -330,14 +328,15 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         counter = row
     }
     
-    @IBAction func onInvite(sender: AnyObject) {
+    func onInvite(sender: AnyObject) {
         if (MFMessageComposeViewController.canSendText()) {
             let messageVC = MFMessageComposeViewController()
             messageVC.body = "Hey, try out Bookify!"
             messageVC.recipients = [] // Optionally add some tel numbers
             messageVC.messageComposeDelegate = self
             // Open the SMS View controller
-            presentViewController(messageVC, animated: true, completion: nil)        }
+            presentViewController(messageVC, animated: true, completion: nil)
+        }
     }
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
@@ -346,20 +345,6 @@ class ProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     override func viewDidAppear(animated: Bool) {
-//        var picture: PFFile? {
-//            didSet {
-//                print(picture)
-//                picture?.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
-//                    if error == nil {
-//                        self.profileImageView.image = UIImage(data: data!)!
-//                    }
-//                    else {
-//                        print(error?.localizedDescription)
-//                        print("ERROR")
-//                    }
-//                })
-//            }
-//        }
         //        self.view.bringSubviewToFront(self.profileDescriptionTextView)
         let query = PFQuery(className: "Profile")
         query.findObjectsInBackgroundWithBlock { (profilepicture: [PFObject]?, error: NSError?) -> Void in
