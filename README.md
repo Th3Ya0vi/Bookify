@@ -56,6 +56,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animationv2.gif' title='Video Walkthrough Sprint 2' width='' alt='Video Walkthrough' />
 
-
 <img src='https://raw.githubusercontent.com/Bookify/Bookify/master/Files/Animations/Animation3.gif' title='Video Walkthrough Sprint 3' width='' alt='Video Walkthrough' />
+
+<img src='https://raw.githubusercontent.com/Bookify/Bookify/Neal/Files/Animations/Animation4.gif' title='Video Walkthrough Sprint 4 width='' alt='Video Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
