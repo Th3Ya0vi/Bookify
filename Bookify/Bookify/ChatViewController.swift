@@ -49,7 +49,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     */
 
-}
+}                               
 
 // MARK - Setup
 extension ChatViewController {

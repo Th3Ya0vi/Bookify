@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q59-Ta-zvB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -524,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2k-bM-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030.5" y="2170.5"/>
+            <point key="canvasLocation" x="3604.5" y="-659.5"/>
         </scene>
         <!--Chat-->
         <scene sceneID="boU-Oy-EPs">
@@ -743,13 +743,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Marker" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-t3-eLy">
-                                <rect key="frame" x="20" y="198" width="28" height="28"/>
+                                <rect key="frame" x="20" y="161" width="15" height="15"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Student Male Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-M5-MY3">
-                                <rect key="frame" x="105" y="161" width="14" height="14"/>
+                                <rect key="frame" x="112" y="161" width="14" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-OJ-15E">
-                                <rect key="frame" x="127" y="161" width="41" height="15"/>
+                                <rect key="frame" x="132" y="161" width="41" height="15"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -757,8 +757,21 @@
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-Dj-Toi">
                                 <rect key="frame" x="20" y="81" width="50" height="46"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texas A&amp;M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYV-Ik-iGM">
+                                <rect key="frame" x="39" y="161" width="63" height="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000596046448" contentMode="scaleToFill" fixedFrame="YES" text="Say something about yourself..." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsM-th-LG3">
+                                <rect key="frame" x="20" y="183" width="335" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9C-mh-Bzp">
-                                <rect key="frame" x="292" y="159" width="63" height="18"/>
+                                <rect key="frame" x="20" y="227" width="63" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Message">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -767,12 +780,6 @@
                                     <action selector="messageUser:" destination="mva-ut-qBI" eventType="touchUpInside" id="APo-Vi-niK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texas A&amp;M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYV-Ik-iGM">
-                                <rect key="frame" x="56" y="193" width="159" height="37"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -912,16 +919,16 @@
         <image name="Bookify Sign In Screen Blurred" width="6000" height="4000"/>
         <image name="Bookify Sign Up Screen" width="3914" height="5863"/>
         <image name="Marker" width="50" height="50"/>
-        <image name="Settings-48" width="6000" height="4000"/>
+        <image name="Settings-48" width="48" height="48"/>
         <image name="Student Male Filled-50" width="50" height="50"/>
         <image name="iconmonstr-banknote-15-24.png" width="24" height="24"/>
         <image name="iconmonstr-star-5-24.png" width="24" height="24"/>
         <image name="iconmonstr-user-6-24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MsK-yq-CgJ"/>
-        <segue reference="NJU-Qj-UXp"/>
-        <segue reference="5e4-rZ-vba"/>
         <segue reference="JZl-dM-gpC"/>
+        <segue reference="MsK-yq-CgJ"/>
+        <segue reference="GYo-Xy-OCH"/>
+        <segue reference="5e4-rZ-vba"/>
     </inferredMetricsTieBreakers>
 </document>
